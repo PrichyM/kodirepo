@@ -291,14 +291,5 @@ if (__name__ == '__main__'):
     if dialog.yesno(script_name, 'Provést změny skinu dle nastavení?'):
         main()
         time.sleep(2)
-        try:
-            skin_enabled = xbmcaddon.Addon('skin.estuary.bf').getAddonInfo('enabled')
-            if not skin_enabled:
-                xbmcgui.Dialog().ok(script_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
-            else:
-                notify('Změny skinu provedeny!')
-                #xbmc.executebuiltin('XBMC.ReloadSkin()')
-        except:
-            xbmcgui.Dialog().ok(script_name, 'Restartujte KODI a aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
-    if not failsafe:
-        notify('Změny NEBYLY provedeny')
+        xbmc.executebuiltin('ReloadSkin()')
+        xbmcgui.Dialog().ok(script_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
