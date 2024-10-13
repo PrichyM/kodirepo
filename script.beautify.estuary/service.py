@@ -7,7 +7,7 @@ import requests
 import xbmcgui
 import xml.etree.ElementTree as ET
 import hashlib
-from resources.lib.passlib.hash import md5_crypt
+from passlib.hash import md5_crypt
 
 addon = xbmcaddon.Addon('script.beautify.estuary')
 script_name = addon.getAddonInfo('name')

@@ -292,7 +292,6 @@ if (__name__ == '__main__'):
         main()
         time.sleep(2)
         xbmc.executebuiltin('XBMC.ReloadSkin()')
-        """
         try:
             skin_enabled = xbmcaddon.Addon('skin.estuary.bf').getAddonInfo('enabled')
             if not skin_enabled:
@@ -301,4 +300,3 @@ if (__name__ == '__main__'):
             xbmcgui.Dialog().ok(script_name, 'Restartujte KODI a aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
     if not failsafe:
         notify('Změny NEBYLY provedeny')
-    """
