@@ -297,7 +297,7 @@ if (__name__ == '__main__'):
                 xbmcgui.Dialog().ok(script_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
             else:
                 notify('Změny skinu provedeny!')
-                xbmc.executebuiltin('XBMC.ReloadSkin()')
+                #xbmc.executebuiltin('XBMC.ReloadSkin()')
         except:
             xbmcgui.Dialog().ok(script_name, 'Restartujte KODI a aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
     if not failsafe:
