@@ -270,12 +270,14 @@ def create_widgets(root):
             poster = poster.replace('REPLACE_XML_PATH', widgets[positions[pos]][positions[subpos]]['path'])
             poster = poster.replace('REPLACE_HEADER', widgets[positions[pos]][positions[subpos]]['name'])
             sort = 'widget_' + positions[pos] + '_node_sort_' + positions[subpos]
-            if int(widgets[positions[pos]][positions[subpos]]['sort']) == 0:
-                sort = 'rating'
-            elif int(widgets[positions[pos]][positions[subpos]]['sort']) == 1:
+            if widgets[positions[pos]][positions[subpos]]['sort'] == '0':
+                #sort = 'rating'
+                sort = 'dateAdded'
+            elif widgets[positions[pos]][positions[subpos]]['sort'] == '1':
                 sort = 'dateAdded'
             else:
-                sort = 'lastplayed'
+                sort = 'dateAdded'
+                #sort = 'rating'
             poster = poster.replace('REPLACE_SORT', sort)
             log('REPLACE_SORT: ' + str(sort), 'D')
             log('FOR: ' + str(widgets[positions[pos]][positions[subpos]]), 'D')
