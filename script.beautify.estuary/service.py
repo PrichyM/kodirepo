@@ -13,10 +13,8 @@ addon = xbmcaddon.Addon('script.beautify.estuary')
 script_name = addon.getAddonInfo('name')
 script_id = addon.getAddonInfo('id')
 
-def log(msg, level):
-    if level == 'D':
-        level = xbmc.LOGDEBUG
-    elif level == 'I':
+def log(msg, level='D'):
+    if level == 'I':
         level = xbmc.LOGINFO
     elif level == 'N':
         level = xbmc.LOGNOTICE
@@ -24,14 +22,17 @@ def log(msg, level):
         level = xbmc.LOGWARNING
     elif level == 'E':
         level = xbmc.LOGERROR
+    else:
+        level = xbmc.LOGDEBUG
     msg = '[EsBF-service]: ' + str(msg)
     xbmc.log(msg, level)
 
 
 def notify(msg, timeout=7000):
     xbmc.executebuiltin('Notification(%s, %s, %d, %s)' % (script_name, msg, timeout, addon.getAddonInfo('icon')))
-    log(msg, xbmc.LOGINFO)
+    log(msg, 'I')
 
+# class WebshareAPI převzata od 
 class WebshareAPI:
     def __init__(self):
         self._base_url = 'https://webshare.cz/api/'
@@ -99,7 +100,7 @@ class WebshareAPI:
                     root.find('message').text)
 
         self.vipdays = root.find('vip_days').text
-        log('Reamin WS VIP days: ' + self.vipdays, 'I')
+        log('Reamin WS VIP days: ' + self.vipdays)
     
     def show_vip_left(self):
         try:
@@ -117,7 +118,7 @@ if __name__ == '__main__':
         curr_time_minutes = time.localtime()[4]
         curr_time_seconds = time.localtime()[5]
         sleep_until_next_day = (((24 - curr_time_hour) * 60) - curr_time_minutes) * 60 + 5
-        log('Start at ' + str(curr_time_hour) + ':' + str(curr_time_minutes) + ':' + str(curr_time_seconds), 'I')
+        log('Start at ' + str(curr_time_hour) + ':' + str(curr_time_minutes) + ':' + str(curr_time_seconds))
         log('Next name day update: ' + str(sleep_until_next_day / 60) + ' minutes', 'I')
         # from urllib.request import Request, urlopen
         cal_url = 'https://svatky.vanio.cz/api/'
@@ -138,8 +139,8 @@ if __name__ == '__main__':
 
         https://www.xbmc-kodi.cz/prispevek-estuary-easy?page=26
         """
-        log('Name day: ' + data['name'], 'I')
-        log('isPublicHoliday: ' + str(data['isPublicHoliday']), 'I')
+        log('Name day: ' + data['name'])
+        log('isPublicHoliday: ' + str(data['isPublicHoliday']))
         win = xbmcgui.Window(10000)
         win.setProperty('calendar_nameDay', data['name'])
         if data['isPublicHoliday']:
@@ -159,5 +160,5 @@ if __name__ == '__main__':
                 pass
         if monitor.waitForAbort(sleep_until_next_day):
             # Abort was requested while waiting. We should exit
-            log('Exiting...', 'I')
+            log('Exiting...')
             break
