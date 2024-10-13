@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.beautify.estuary"
+       name="Beautify Estuary"
+       version="0.0.2"
+       provider-name="PrichyM">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.python.module" library="resources/lib/"/>
+  <extension point="xbmc.service" library="service.py" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary>Beautify Estuary</summary>
+    <description>
+        bla bla bla
+    </description>
+    <assets>
+    <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>

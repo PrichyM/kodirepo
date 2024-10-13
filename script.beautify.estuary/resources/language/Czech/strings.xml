@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+	<string id="30000">DefaultActor.png</string>
+	<string id="30001">DefaultCountry.png</string>
+	<string id="30002">DefaultDirector.png</string>
+	<string id="30003">DefaultGenre.png</string>
+	<string id="30004">DefaultInProgressShows.png</string>
+	<string id="30005">DefaultMovieTitle.png</string>
+	<string id="30006">DefaultMovies.png</string>
+	<string id="30007">DefaultRecentlyAddedEpisodes.png</string>
+	<string id="30008">DefaultRecentlyAddedMovies.png</string>
+	<string id="30009">DefaultRecentlyAddedMusicVideos.png</string>
+	<string id="30010">DefaultSets.png</string>
+	<string id="30011">DefaultStudios.png</string>
+	<string id="30012">DefaultTVShowTitle.png</string>
+	<string id="30013">DefaultTVShows.png</string>
+	<string id="30014">DefaultTags.png</string>
+	<string id="30015">DefaultVideo.png</string>
+	<string id="30016">DefaultVideoCover.png</string>
+	<string id="30017">DefaultVideoDeleted.png</string>
+	<string id="30018">DefaultVideoPlaylists.png</string>
+	<string id="30019">DefaultYear.png</string>
+	<string id="30020">addons.png</string>
+	<string id="30021">android.png</string>
+	<string id="30022">disc.png</string>
+	<string id="30023">download.png</string>
+	<string id="30024">favourites.png</string>
+	<string id="30025">livetv.png</string>
+	<string id="30026">manage.png</string>
+	<string id="30027">movies.png</string>
+	<string id="30028">music.png</string>
+	<string id="30029">musicvideos.png</string>
+	<string id="30030">pictures.png</string>
+	<string id="30031">programs.png</string>
+	<string id="30032">radio.png</string>
+	<string id="30033">tv.png</string>
+	<string id="30034">videos.png</string>
+	<string id="30035">weather.png</string>
+	<string id="30036">rating</string>
+	<string id="30037">dateAdded</string>
+</strings>
