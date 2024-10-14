@@ -35,7 +35,7 @@ def notify(msg, timeout=7000):
     xbmc.executebuiltin('Notification(%s, %s, %d, %s)' % (script_name, msg, timeout, addon.getAddonInfo('icon')))
     log(msg, 'I')
 
-# class WebshareAPI převzata od 
+# class WebshareAPI převzata od https://github.com/cyrusmg/webshare-api
 class WebshareAPI:
     def __init__(self):
         self._base_url = 'https://webshare.cz/api/'
@@ -49,7 +49,6 @@ class WebshareAPI:
     def login(self, user_name, password):
         """Logs {user_name} in Webshare API"""
         salt = self.get_salt(user_name)
-        log(salt, 'I')
         headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
         url = self._base_url + 'login/'
         password, digest = self.hash_password(user_name, password, salt)
