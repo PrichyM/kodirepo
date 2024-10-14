@@ -7,9 +7,12 @@ import requests
 import xbmcgui
 import xml.etree.ElementTree as ET
 import hashlib
-from passlib.hash import md5_crypt
 
 addon = xbmcaddon.Addon('script.beautify.estuary')
+
+if addon.getSetting('vip') == 'true':
+    from resources.lib.passlib.hash import md5_crypt
+
 script_name = addon.getAddonInfo('name')
 script_id = addon.getAddonInfo('id')
 
@@ -46,6 +49,7 @@ class WebshareAPI:
     def login(self, user_name, password):
         """Logs {user_name} in Webshare API"""
         salt = self.get_salt(user_name)
+        log(salt, 'I')
         headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
         url = self._base_url + 'login/'
         password, digest = self.hash_password(user_name, password, salt)
