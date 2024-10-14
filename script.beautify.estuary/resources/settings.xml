@@ -64,30 +64,30 @@
     <setting label="1. Název" id="widget_first_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_first_node_name_first" type="text" visible="eq(-4,true)"/>
     <setting label="1. sort" id="widget_first_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
-    <setting label="2. Název" id="widget_first_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="2. XML soubor" id="widget_first_node_name_second" type="text" visible="gt(-5,1) + eq(-7,true)"/>
-    <setting label="2. sort" id="widget_first_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1) + eq(-8,true)"/>
-    <setting label="3. Název" id="widget_first_name_third" type="text" visible="gt(-7,2) + eq(-9,true)"/>
-    <setting label="3. XML soubor" id="widget_first_node_name_third" type="text" visible="gt(-8,2) + eq(-10,true)"/>
-    <setting label="3. sort" id="widget_first_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2) + eq(-11,true)"/>
-    <setting label="4. Název" id="widget_first_name_fourth" type="text" visible="gt(-10,3) + eq(-12,true)"/>
-    <setting label="4. XML soubor" id="widget_first_node_name_fourth" type="text" visible="gt(-11,3) + eq(-13,true)"/>
-    <setting label="4. sort" id="widget_first_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3) + eq(-14,true)"/>
-    <setting label="5. Název" id="widget_first_name_fifth" type="text" visible="gt(-13,4) + eq(-15,true)"/>
-    <setting label="5. XML soubor" id="widget_first_node_name_fifth" type="text" visible="gt(-14,4) + eq(-16,true)"/>
-    <setting label="5. sort" id="widget_first_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4) + eq(-17,true)"/>
-    <setting label="6. Název" id="widget_first_name_sixth" type="text" visible="gt(-16,5) + eq(-18,true)"/>
-    <setting label="6. XML soubor" id="widget_first_node_name_sixth" type="text" visible="gt(-17,5) + eq(-19,true)"/>
-    <setting label="6. sort" id="widget_first_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5) + eq(-20,true)"/>
-    <setting label="7. Název" id="widget_first_name_seventh" type="text" visible="gt(-19,6) + eq(-21,true)"/>
-    <setting label="7. XML soubor" id="widget_first_node_name_seventh" type="text" visible="gt(-20,6) + eq(-22,true)"/>
-    <setting label="7. sort" id="widget_first_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6) + eq(-23,true)"/>
-    <setting label="8. Název" id="widget_first_name_eight" type="text" visible="gt(-22,7) + eq(-24,true)"/>
-    <setting label="8. XML soubor" id="widget_first_node_name_eight" type="text" visible="gt(-23,7) + eq(-25,true)"/>
-    <setting label="8. sort" id="widget_first_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7) + eq(-26,true)"/>
-    <setting label="9. Název" id="widget_first_name_nineth" type="text" visible="gt(-25,8) + eq(-27,true)"/>
-    <setting label="9. XML soubor" id="widget_first_node_name_nineth" type="text" visible="gt(-26,8) + eq(-28,true)"/>
-    <setting label="9. sort" id="widget_first_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8) + eq(-29,true)"/>
+    <setting label="2. Název" id="widget_first_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_first_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_first_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_first_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_first_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_first_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_first_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_first_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_first_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_first_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_first_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_first_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_first_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_first_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_first_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_first_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_first_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_first_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_first_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_first_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_first_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_first_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_first_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_first_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
     <setting label="2. položka menu" type="lsep"/>
     <setting label="Vytvořit widget" type="bool" id="widget_second" default="false"/>
     <setting label="Zahrnout kategorie (1. řádek)" type="bool" id="widget_second_category" default="true" enable="eq(-1,true)"/>
@@ -95,52 +95,61 @@
     <setting label="1. Název" id="widget_second_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_second_node_name_first" type="text" visible="eq(-4,true)"/>
     <setting label="1. sort" id="widget_second_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
-    <setting label="2. Název" id="widget_second_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="2. XML soubor" id="widget_second_node_name_second" type="text" visible="gt(-5,1) + eq(-7,true)"/>
-    <setting label="2. sort" id="widget_second_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1) + eq(-8,true)"/>
-    <setting label="3. Název" id="widget_second_name_third" type="text" visible="gt(-7,2) + eq(-9,true)"/>
-    <setting label="3. XML soubor" id="widget_second_node_name_third" type="text" visible="gt(-8,2) + eq(-10,true)"/>
-    <setting label="3. sort" id="widget_second_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2) + eq(-11,true)"/>
-    <setting label="4. Název" id="widget_second_name_fourth" type="text" visible="gt(-10,3) + eq(-12,true)"/>
-    <setting label="4. XML soubor" id="widget_second_node_name_fourth" type="text" visible="gt(-11,3) + eq(-13,true)"/>
-    <setting label="4. sort" id="widget_second_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3) + eq(-14,true)"/>
-    <setting label="5. Název" id="widget_second_name_fifth" type="text" visible="gt(-13,4) + eq(-15,true)"/>
-    <setting label="5. XML soubor" id="widget_second_node_name_fifth" type="text" visible="gt(-14,4) + eq(-16,true)"/>
-    <setting label="5. sort" id="widget_second_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4) + eq(-17,true)"/>
-    <setting label="6. Název" id="widget_second_name_sixth" type="text" visible="gt(-16,5) + eq(-18,true)"/>
-    <setting label="6. XML soubor" id="widget_second_node_name_sixth" type="text" visible="gt(-17,5) + eq(-19,true)"/>
-    <setting label="6. sort" id="widget_second_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5) + eq(-20,true)"/>
-    <setting label="7. Název" id="widget_second_name_seventh" type="text" visible="gt(-19,6) + eq(-21,true)"/>
-    <setting label="7. XML soubor" id="widget_second_node_name_seventh" type="text" visible="gt(-20,6) + eq(-22,true)"/>
-    <setting label="7. sort" id="widget_second_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6) + eq(-23,true)"/>
-    <setting label="8. Název" id="widget_second_name_eight" type="text" visible="gt(-22,7) + eq(-24,true)"/>
-    <setting label="8. XML soubor" id="widget_second_node_name_eight" type="text" visible="gt(-23,7) + eq(-25,true)"/>
-    <setting label="8. sort" id="widget_second_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7) + eq(-26,true)"/>
-    <setting label="9. Název" id="widget_second_name_nineth" type="text" visible="gt(-25,8) + eq(-27,true)"/>
-    <setting label="9. XML soubor" id="widget_second_node_name_nineth" type="text" visible="gt(-26,8) + eq(-28,true)"/>
-    <setting label="9. sort" id="widget_second_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8) + eq(-29,true)"/>
+    <setting label="2. Název" id="widget_second_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_second_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_second_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_second_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_second_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_second_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_second_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_second_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_second_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_second_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_second_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_second_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_second_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_second_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_second_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_second_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_second_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_second_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_second_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_second_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_second_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_second_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_second_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_second_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
     <setting label="3. položka menu" type="lsep"/>
     <setting label="Vytvořit widget" type="bool" id="widget_third" default="false"/>
     <setting label="Zahrnout kategorie (1. řádek)" type="bool" id="widget_third_category" default="true" enable="eq(-1,true)"/>
     <setting label="Počet 'poster'-ů" type="slider" id="widget_third_nums" default="1" range="1,9" option="int" visible="eq(-2,true)" />
     <setting label="1. Název" id="widget_third_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_third_node_name_first" type="text" visible="eq(-4,true)"/>
-    <setting label="2. Název" id="widget_third_name_second" type="text" visible="gt(-3,1) + eq(-5,true)"/>
-    <setting label="2. XML soubor" id="widget_third_node_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="3. Název" id="widget_third_name_third" type="text" visible="gt(-5,2) + eq(-7,true)"/>
-    <setting label="3. XML soubor" id="widget_third_node_name_third" type="text" visible="gt(-6,2) + eq(-8,true)"/>
-    <setting label="4. Název" id="widget_third_name_fourth" type="text" visible="gt(-7,3) + eq(-9,true)"/>
-    <setting label="4. XML soubor" id="widget_third_node_name_fourth" type="text" visible="gt(-8,3) + eq(-10,true)"/>
-    <setting label="5. Název" id="widget_third_name_fifth" type="text" visible="gt(-9,4) + eq(-11,true)"/>
-    <setting label="5. XML soubor" id="widget_third_node_name_fifth" type="text" visible="gt(-10,4) + eq(-12,true)"/>
-    <setting label="6. Název" id="widget_third_name_sixth" type="text" visible="gt(-11,5) + eq(-13,true)"/>
-    <setting label="6. XML soubor" id="widget_third_node_name_sixth" type="text" visible="gt(-12,5) + eq(-14,true)"/>
-    <setting label="7. Název" id="widget_third_name_seventh" type="text" visible="gt(-13,6) + eq(-15,true)"/>
-    <setting label="7. XML soubor" id="widget_third_node_name_seventh" type="text" visible="gt(-14,6) + eq(-16,true)"/>
-    <setting label="8. Název" id="widget_third_name_eight" type="text" visible="gt(-15,7) + eq(-17,true)"/>
-    <setting label="8. XML soubor" id="widget_third_node_name_eight" type="text" visible="gt(-16,7) + eq(-18,true)"/>
-    <setting label="9. Název" id="widget_third_name_nineth" type="text" visible="gt(-17,8) + eq(-19,true)"/>
-    <setting label="9. XML soubor" id="widget_third_node_name_nineth" type="text" visible="gt(-18,8) + eq(-20,true)"/>
+    <setting label="1. sort" id="widget_third_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
+    <setting label="2. Název" id="widget_third_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_third_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_third_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_third_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_third_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_third_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_third_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_third_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_third_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_third_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_third_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_third_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_third_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_third_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_third_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_third_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_third_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_third_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_third_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_third_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_third_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_third_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_third_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_third_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
   </category>
   <category label="Widgety 4-6">
     <setting label="4. položka menu" type="lsep"/>
@@ -149,66 +158,93 @@
     <setting label="Počet 'poster'-ů" type="slider" id="widget_fourth_nums" default="1" range="1,9" option="int" visible="eq(-2,true)" />
     <setting label="1. Název" id="widget_fourth_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_fourth_node_name_first" type="text" visible="eq(-4,true)"/>
-    <setting label="2. Název" id="widget_fourth_name_second" type="text" visible="gt(-3,1) + eq(-5,true)"/>
-    <setting label="2. XML soubor" id="widget_fourth_node_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="3. Název" id="widget_fourth_name_third" type="text" visible="gt(-5,2) + eq(-7,true)"/>
-    <setting label="3. XML soubor" id="widget_fourth_node_name_third" type="text" visible="gt(-6,2) + eq(-8,true)"/>
-    <setting label="4. Název" id="widget_fourth_name_fourth" type="text" visible="gt(-7,3) + eq(-9,true)"/>
-    <setting label="4. XML soubor" id="widget_fourth_node_name_fourth" type="text" visible="gt(-8,3) + eq(-10,true)"/>
-    <setting label="5. Název" id="widget_fourth_name_fifth" type="text" visible="gt(-9,4) + eq(-11,true)"/>
-    <setting label="5. XML soubor" id="widget_fourth_node_name_fifth" type="text" visible="gt(-10,4) + eq(-12,true)"/>
-    <setting label="6. Název" id="widget_fourth_name_sixth" type="text" visible="gt(-11,5) + eq(-13,true)"/>
-    <setting label="6. XML soubor" id="widget_fourth_node_name_sixth" type="text" visible="gt(-12,5) + eq(-14,true)"/>
-    <setting label="7. Název" id="widget_fourth_name_seventh" type="text" visible="gt(-13,6) + eq(-15,true)"/>
-    <setting label="7. XML soubor" id="widget_fourth_node_name_seventh" type="text" visible="gt(-14,6) + eq(-16,true)"/>
-    <setting label="8. Název" id="widget_fourth_name_eight" type="text" visible="gt(-15,7) + eq(-17,true)"/>
-    <setting label="8. XML soubor" id="widget_fourth_node_name_eight" type="text" visible="gt(-16,7) + eq(-18,true)"/>
-    <setting label="9. Název" id="widget_fourth_name_nineth" type="text" visible="gt(-17,8) + eq(-19,true)"/>
-    <setting label="9. XML soubor" id="widget_fourth_node_name_nineth" type="text" visible="gt(-18,8) + eq(-20,true)"/>
+    <setting label="1. sort" id="widget_fourth_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
+    <setting label="2. Název" id="widget_fourth_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_fourth_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_fourth_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_fourth_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_fourth_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_fourth_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_fourth_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_fourth_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_fourth_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_fourth_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_fourth_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_fourth_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_fourth_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_fourth_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_fourth_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_fourth_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_fourth_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_fourth_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_fourth_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_fourth_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_fourth_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_fourth_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_fourth_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_fourth_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
     <setting label="5. položka menu" type="lsep"/>
     <setting label="Vytvořit widget" type="bool" id="widget_fifth" default="false"/>
     <setting label="Zahrnout kategorie (1. řádek)" type="bool" id="widget_fifth_category" default="true" enable="eq(-1,true)"/>
     <setting label="Počet 'poster'-ů" type="slider" id="widget_fifth_nums" default="1" range="1,9" option="int" visible="eq(-2,true)" />
     <setting label="1. Název" id="widget_fifth_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_fifth_node_name_first" type="text" visible="eq(-4,true)"/>
-    <setting label="2. Název" id="widget_fifth_name_second" type="text" visible="gt(-3,1) + eq(-5,true)"/>
-    <setting label="2. XML soubor" id="widget_fifth_node_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="3. Název" id="widget_fifth_name_third" type="text" visible="gt(-5,2) + eq(-7,true)"/>
-    <setting label="3. XML soubor" id="widget_fifth_node_name_third" type="text" visible="gt(-6,2) + eq(-8,true)"/>
-    <setting label="4. Název" id="widget_fifth_name_fourth" type="text" visible="gt(-7,3) + eq(-9,true)"/>
-    <setting label="4. XML soubor" id="widget_fifth_node_name_fourth" type="text" visible="gt(-8,3) + eq(-10,true)"/>
-    <setting label="5. Název" id="widget_fifth_name_fifth" type="text" visible="gt(-9,4) + eq(-11,true)"/>
-    <setting label="5. XML soubor" id="widget_fifth_node_name_fifth" type="text" visible="gt(-10,4) + eq(-12,true)"/>
-    <setting label="6. Název" id="widget_fifth_name_sixth" type="text" visible="gt(-11,5) + eq(-13,true)"/>
-    <setting label="6. XML soubor" id="widget_fifth_node_name_sixth" type="text" visible="gt(-12,5) + eq(-14,true)"/>
-    <setting label="7. Název" id="widget_fifth_name_seventh" type="text" visible="gt(-13,6) + eq(-15,true)"/>
-    <setting label="7. XML soubor" id="widget_fifth_node_name_seventh" type="text" visible="gt(-14,6) + eq(-16,true)"/>
-    <setting label="8. Název" id="widget_fifth_name_eight" type="text" visible="gt(-15,7) + eq(-17,true)"/>
-    <setting label="8. XML soubor" id="widget_fifth_node_name_eight" type="text" visible="gt(-16,7) + eq(-18,true)"/>
-    <setting label="9. Název" id="widget_fifth_name_nineth" type="text" visible="gt(-17,8) + eq(-19,true)"/>
-    <setting label="9. XML soubor" id="widget_fifth_node_name_nineth" type="text" visible="gt(-18,8) + eq(-20,true)"/>
+    <setting label="1. sort" id="widget_fifth_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
+    <setting label="2. Název" id="widget_fifth_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_fifth_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_fifth_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_fifth_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_fifth_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_fifth_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_fifth_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_fifth_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_fifth_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_fifth_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_fifth_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_fifth_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_fifth_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_fifth_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_fifth_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_fifth_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_fifth_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_fifth_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_fifth_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_fifth_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_fifth_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_fifth_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_fifth_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_fifth_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
     <setting label="6. položka menu" type="lsep"/>
     <setting label="Vytvořit widget" type="bool" id="widget_sixth" default="false"/>
     <setting label="Zahrnout kategorie (1. řádek)" type="bool" id="widget_sixth_category" default="true" enable="eq(-1,true)"/>
     <setting label="Počet 'poster'-ů" type="slider" id="widget_sixth_nums" default="1" range="1,9" option="int" visible="eq(-2,true)" />
     <setting label="1. Název" id="widget_sixth_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_sixth_node_name_first" type="text" visible="eq(-4,true)"/>
-    <setting label="2. Název" id="widget_sixth_name_second" type="text" visible="gt(-3,1) + eq(-5,true)"/>
-    <setting label="2. XML soubor" id="widget_sixth_node_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="3. Název" id="widget_sixth_name_third" type="text" visible="gt(-5,2) + eq(-7,true)"/>
-    <setting label="3. XML soubor" id="widget_sixth_node_name_third" type="text" visible="gt(-6,2) + eq(-8,true)"/>
-    <setting label="4. Název" id="widget_sixth_name_fourth" type="text" visible="gt(-7,3) + eq(-9,true)"/>
-    <setting label="4. XML soubor" id="widget_sixth_node_name_fourth" type="text" visible="gt(-8,3) + eq(-10,true)"/>
-    <setting label="5. Název" id="widget_sixth_name_fifth" type="text" visible="gt(-9,4) + eq(-11,true)"/>
-    <setting label="5. XML soubor" id="widget_sixth_node_name_fifth" type="text" visible="gt(-10,4) + eq(-12,true)"/>
-    <setting label="6. Název" id="widget_sixth_name_sixth" type="text" visible="gt(-11,5) + eq(-13,true)"/>
-    <setting label="6. XML soubor" id="widget_sixth_node_name_sixth" type="text" visible="gt(-12,5) + eq(-14,true)"/>
-    <setting label="7. Název" id="widget_sixth_name_seventh" type="text" visible="gt(-13,6) + eq(-15,true)"/>
-    <setting label="7. XML soubor" id="widget_sixth_node_name_seventh" type="text" visible="gt(-14,6) + eq(-16,true)"/>
-    <setting label="8. Název" id="widget_sixth_name_eight" type="text" visible="gt(-15,7) + eq(-17,true)"/>
-    <setting label="8. XML soubor" id="widget_sixth_node_name_eight" type="text" visible="gt(-16,7) + eq(-18,true)"/>
-    <setting label="9. Název" id="widget_sixth_name_nineth" type="text" visible="gt(-17,8) + eq(-19,true)"/>
-    <setting label="9. XML soubor" id="widget_sixth_node_name_nineth" type="text" visible="gt(-18,8) + eq(-20,true)"/>
+    <setting label="1. sort" id="widget_sixth_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
+    <setting label="2. Název" id="widget_sixth_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_sixth_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_sixth_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_sixth_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_sixth_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_sixth_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_sixth_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_sixth_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_sixth_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_sixth_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_sixth_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_sixth_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_sixth_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_sixth_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_sixth_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_sixth_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_sixth_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_sixth_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_sixth_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_sixth_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_sixth_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_sixth_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_sixth_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_sixth_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
   </category>
   <category label="Widgety 7-9">
     <setting label="7. položka menu" type="lsep"/>
@@ -217,65 +253,92 @@
     <setting label="Počet 'poster'-ů" type="slider" id="widget_seventh_nums" default="1" range="1,9" option="int" visible="eq(-2,true)" />
     <setting label="1. Název" id="widget_seventh_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_seventh_node_name_first" type="text" visible="eq(-4,true)"/>
-    <setting label="2. Název" id="widget_seventh_name_second" type="text" visible="gt(-3,1) + eq(-5,true)"/>
-    <setting label="2. XML soubor" id="widget_seventh_node_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="3. Název" id="widget_seventh_name_third" type="text" visible="gt(-5,2) + eq(-7,true)"/>
-    <setting label="3. XML soubor" id="widget_seventh_node_name_third" type="text" visible="gt(-6,2) + eq(-8,true)"/>
-    <setting label="4. Název" id="widget_seventh_name_fourth" type="text" visible="gt(-7,3) + eq(-9,true)"/>
-    <setting label="4. XML soubor" id="widget_seventh_node_name_fourth" type="text" visible="gt(-8,3) + eq(-10,true)"/>
-    <setting label="5. Název" id="widget_seventh_name_fifth" type="text" visible="gt(-9,4) + eq(-11,true)"/>
-    <setting label="5. XML soubor" id="widget_seventh_node_name_fifth" type="text" visible="gt(-10,4) + eq(-12,true)"/>
-    <setting label="6. Název" id="widget_seventh_name_sixth" type="text" visible="gt(-11,5) + eq(-13,true)"/>
-    <setting label="6. XML soubor" id="widget_seventh_node_name_sixth" type="text" visible="gt(-12,5) + eq(-14,true)"/>
-    <setting label="7. Název" id="widget_seventh_name_seventh" type="text" visible="gt(-13,6) + eq(-15,true)"/>
-    <setting label="7. XML soubor" id="widget_seventh_node_name_seventh" type="text" visible="gt(-14,6) + eq(-16,true)"/>
-    <setting label="8. Název" id="widget_seventh_name_eight" type="text" visible="gt(-15,7) + eq(-17,true)"/>
-    <setting label="8. XML soubor" id="widget_seventh_node_name_eight" type="text" visible="gt(-16,7) + eq(-18,true)"/>
-    <setting label="9. Název" id="widget_seventh_name_nineth" type="text" visible="gt(-17,8) + eq(-19,true)"/>
-    <setting label="9. XML soubor" id="widget_seventh_node_name_nineth" type="text" visible="gt(-18,8) + eq(-20,true)"/>
+    <setting label="1. sort" id="widget_seventh_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
+    <setting label="2. Název" id="widget_seventh_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_seventh_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_seveth_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_seventh_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_seventh_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_seveth_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_seventh_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_seventh_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_seventh_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_seventh_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_seventh_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_seveth_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_seventh_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_seventh_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_seventh_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_seventh_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_seventh_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_seventh_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_seventh_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_seventh_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_seventh_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_seventh_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_seventh_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_seventh_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
     <setting label="8. položka menu" type="lsep"/>
     <setting label="Vytvořit widget" type="bool" id="widget_eighth" default="false"/>
     <setting label="Zahrnout kategorie (1. řádek)" type="bool" id="widget_eighth_category" default="true" enable="eq(-1,true)"/>
     <setting label="Počet 'poster'-ů" type="slider" id="widget_eighth_nums" default="1" range="1,9" option="int" visible="eq(-2,true)" />
     <setting label="1. Název" id="widget_eighth_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_eighth_node_name_first" type="text" visible="eq(-4,true)"/>
-    <setting label="2. Název" id="widget_eighth_name_second" type="text" visible="gt(-3,1) + eq(-5,true)"/>
-    <setting label="2. XML soubor" id="widget_eighth_node_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="3. Název" id="widget_eighth_name_third" type="text" visible="gt(-5,2) + eq(-7,true)"/>
-    <setting label="3. XML soubor" id="widget_eighth_node_name_third" type="text" visible="gt(-6,2) + eq(-8,true)"/>
-    <setting label="4. Název" id="widget_eighth_name_fourth" type="text" visible="gt(-7,3) + eq(-9,true)"/>
-    <setting label="4. XML soubor" id="widget_eighth_node_name_fourth" type="text" visible="gt(-8,3) + eq(-10,true)"/>
-    <setting label="5. Název" id="widget_eighth_name_fifth" type="text" visible="gt(-9,4) + eq(-11,true)"/>
-    <setting label="5. XML soubor" id="widget_eighth_node_name_fifth" type="text" visible="gt(-10,4) + eq(-12,true)"/>
-    <setting label="6. Název" id="widget_eighth_name_sixth" type="text" visible="gt(-11,5) + eq(-13,true)"/>
-    <setting label="6. XML soubor" id="widget_eighth_node_name_sixth" type="text" visible="gt(-12,5) + eq(-14,true)"/>
-    <setting label="7. Název" id="widget_eighth_name_seventh" type="text" visible="gt(-13,6) + eq(-15,true)"/>
-    <setting label="7. XML soubor" id="widget_eighth_node_name_seventh" type="text" visible="gt(-14,6) + eq(-16,true)"/>
-    <setting label="8. Název" id="widget_eighth_name_eight" type="text" visible="gt(-15,7) + eq(-17,true)"/>
-    <setting label="8. XML soubor" id="widget_eighth_node_name_eight" type="text" visible="gt(-16,7) + eq(-18,true)"/>
-    <setting label="9. Název" id="widget_eighth_name_nineth" type="text" visible="gt(-17,8) + eq(-19,true)"/>
-    <setting label="9. XML soubor" id="widget_eighth_node_name_nineth" type="text" visible="gt(-18,8) + eq(-20,true)"/>
+    <setting label="1. sort" id="widget_eighth_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
+    <setting label="2. Název" id="widget_eighth_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_eighth_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_eighth_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_eighth_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_eighth_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_eighth_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_eighth_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_eighth_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_eighth_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_eighth_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_eighth_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_eighth_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_eighth_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_eighth_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_eighth_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_eighth_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_eighth_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_eighth_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_eighth_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_eighth_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_eighth_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_eighth_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_eighth_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_eighth_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
     <setting label="9. položka menu" type="lsep"/>
     <setting label="Vytvořit widget" type="bool" id="widget_nineth" default="false"/>
     <setting label="Zahrnout kategorie (1. řádek)" type="bool" id="widget_nineth_category" default="true" enable="eq(-1,true)"/>
     <setting label="Počet 'poster'-ů" type="slider" id="widget_nineth_nums" default="1" range="1,9" option="int" visible="eq(-2,true)" />
     <setting label="1. Název" id="widget_nineth_name_first" type="text" visible="eq(-3,true)"/>
     <setting label="1. XML soubor" id="widget_nineth_node_name_first" type="text" visible="eq(-4,true)"/>
-    <setting label="2. Název" id="widget_nineth_name_second" type="text" visible="gt(-3,1) + eq(-5,true)"/>
-    <setting label="2. XML soubor" id="widget_nineth_node_name_second" type="text" visible="gt(-4,1) + eq(-6,true)"/>
-    <setting label="3. Název" id="widget_nineth_name_third" type="text" visible="gt(-5,2) + eq(-7,true)"/>
-    <setting label="3. XML soubor" id="widget_nineth_node_name_third" type="text" visible="gt(-6,2) + eq(-8,true)"/>
-    <setting label="4. Název" id="widget_nineth_name_fourth" type="text" visible="gt(-7,3) + eq(-9,true)"/>
-    <setting label="4. XML soubor" id="widget_nineth_node_name_fourth" type="text" visible="gt(-8,3) + eq(-10,true)"/>
-    <setting label="5. Název" id="widget_nineth_name_fifth" type="text" visible="gt(-9,4) + eq(-11,true)"/>
-    <setting label="5. XML soubor" id="widget_nineth_node_name_fifth" type="text" visible="gt(-10,4) + eq(-12,true)"/>
-    <setting label="6. Název" id="widget_nineth_name_sixth" type="text" visible="gt(-11,5) + eq(-13,true)"/>
-    <setting label="6. XML soubor" id="widget_nineth_node_name_sixth" type="text" visible="gt(-12,5) + eq(-14,true)"/>
-    <setting label="7. Název" id="widget_nineth_name_seventh" type="text" visible="gt(-13,6) + eq(-15,true)"/>
-    <setting label="7. XML soubor" id="widget_nineth_node_name_seventh" type="text" visible="gt(-14,6) + eq(-16,true)"/>
-    <setting label="8. Název" id="widget_nineth_name_eight" type="text" visible="gt(-15,7) + eq(-17,true)"/>
-    <setting label="8. XML soubor" id="widget_nineth_node_name_eight" type="text" visible="gt(-16,7) + eq(-18,true)"/>
-    <setting label="9. Název" id="widget_nineth_name_nineth" type="text" visible="gt(-17,8) + eq(-19,true)"/>
-    <setting label="9. XML soubor" id="widget_nineth_node_name_nineth" type="text" visible="gt(-18,8) + eq(-20,true)"/>
+    <setting label="1. sort" id="widget_nineth_node_sort_first" type="select" lvalues="30036|30037|30038" default="1" visible="eq(-5,true)"/>
+    <setting label="2. Název" id="widget_nineth_name_second" type="text" visible="gt(-4,1)"/>
+    <setting label="2. XML soubor" id="widget_nineth_node_name_second" type="text" visible="gt(-5,1)"/>
+    <setting label="2. sort" id="widget_nineth_node_sort_second" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-6,1)"/>
+    <setting label="3. Název" id="widget_nineth_name_third" type="text" visible="gt(-7,2)"/>
+    <setting label="3. XML soubor" id="widget_nineth_node_name_third" type="text" visible="gt(-8,2)"/>
+    <setting label="3. sort" id="widget_nineth_node_sort_third" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-9,2)"/>
+    <setting label="4. Název" id="widget_nineth_name_fourth" type="text" visible="gt(-10,3)"/>
+    <setting label="4. XML soubor" id="widget_nineth_node_name_fourth" type="text" visible="gt(-11,3)"/>
+    <setting label="4. sort" id="widget_nineth_node_sort_fourth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-12,3)"/>
+    <setting label="5. Název" id="widget_nineth_name_fifth" type="text" visible="gt(-13,4)"/>
+    <setting label="5. XML soubor" id="widget_nineth_node_name_fifth" type="text" visible="gt(-14,4)"/>
+    <setting label="5. sort" id="widget_nineth_node_sort_fifth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-15,4)"/>
+    <setting label="6. Název" id="widget_nineth_name_sixth" type="text" visible="gt(-16,5)"/>
+    <setting label="6. XML soubor" id="widget_nineth_node_name_sixth" type="text" visible="gt(-17,5)"/>
+    <setting label="6. sort" id="widget_nineth_node_sort_sixth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-18,5)"/>
+    <setting label="7. Název" id="widget_nineth_name_seventh" type="text" visible="gt(-19,6)"/>
+    <setting label="7. XML soubor" id="widget_nineth_node_name_seventh" type="text" visible="gt(-20,6)"/>
+    <setting label="7. sort" id="widget_nineth_node_sort_seventh" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-21,6)"/>
+    <setting label="8. Název" id="widget_nineth_name_eight" type="text" visible="gt(-22,7)"/>
+    <setting label="8. XML soubor" id="widget_nineth_node_name_eight" type="text" visible="gt(-23,7)"/>
+    <setting label="8. sort" id="widget_nineth_node_sort_eight" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-24,7)"/>
+    <setting label="9. Název" id="widget_nineth_name_nineth" type="text" visible="gt(-25,8)"/>
+    <setting label="9. XML soubor" id="widget_nineth_node_name_nineth" type="text" visible="gt(-26,8)"/>
+    <setting label="9. sort" id="widget_nineth_node_sort_nineth" type="select" lvalues="30036|30037|30038" default="1" visible="gt(-27,8)"/>
   </category>
 </settings>
