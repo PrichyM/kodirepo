@@ -39,7 +39,7 @@ vip_days_node = """
 		<control type="image">
 			<width>70</width>
 			<height>70</height>
-			<texture colordiffuse="button_focus">buttons/roundbutton-fo.png</texture>
+			<texture colordiffuse="REPLACE_COLOR">buttons/roundbutton-fo.png</texture>
 		</control>
 		<control type="label">
 			<width>44</width>

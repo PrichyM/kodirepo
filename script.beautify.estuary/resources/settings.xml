@@ -5,7 +5,7 @@
 			<group id="1" label="30010">
 				<setting id="date" type="boolean" label="30011" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="calendar_nameDay" type="boolean" label="30012" help="">
@@ -49,6 +49,18 @@
 						<hidden>true</hidden>
 					</control>
 				</setting>
+				<setting id="vip_color" type="string" label="30022" help="" parent="vip">
+					<level>0</level>
+					<default>button_focus</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="vip">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="edit" format="string">
+						<heading>30022</heading>
+					</control>
+				</setting>
 			</group>
 			<group id="2" label="30016">
 				<setting id="skin_reload" type="boolean" label="30017" help="">
@@ -63,7 +75,7 @@
 				</setting>
 				<setting id="debug_toggle" type="boolean" label="30019" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -93,7 +105,7 @@
 			<group id="4" label="30024">
 				<setting id="wft" type="boolean" label="30025" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -102,7 +114,7 @@
 			<group id="1">
 				<setting id="menu_nums" type="integer" label="30127" help="">
 					<level>0</level>
-					<default>1</default>
+					<default>0</default>
 					<constraints>
 						<minimum>0</minimum>
 						<maximum>9</maximum>
@@ -119,6 +131,11 @@
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">0</condition>
+						</dependency>
+					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
 					</control>
@@ -129,6 +146,11 @@
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">0</condition>
+						</dependency>
+					</dependencies>
 					<control type="edit" format="string">
 						<heading>30129</heading>
 					</control>
@@ -156,6 +178,11 @@
 							<option label="30035">15</option>
 						</options>
 					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">0</condition>
+						</dependency>
+					</dependencies>
 					<control type="list" format="string">
 						<heading>30130</heading>
 					</control>
@@ -167,6 +194,11 @@
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">0</condition>
+						</dependency>
+					</dependencies>
 					<control type="button" format="addon">
 						<heading>30131</heading>
 						<show more="true" details="true">installed</show>
