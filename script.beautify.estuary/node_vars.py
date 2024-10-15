@@ -48,7 +48,7 @@ vip_days_node = """
 			<left>12</left>
 			<align>center</align>
 			<aligny>center</aligny>
-			<font>font20_title</font>
+			<font>REPLACE_FONT</font>
 			<label>$INFO[Window(Home).Property(ws.days)]</label>
 		</control>
 	</control>

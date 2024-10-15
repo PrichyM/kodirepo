@@ -207,6 +207,7 @@ def process():
     # HOW MANY VIP DAYS GET LEFT
     if addon.getSetting('vip') == 'true':
         webshare_vip = nvars.vip_days_node.replace('REPLACE_COLOR', addon.getSetting('vip_color'))
+        webshare_vip = webshare_vip.replace('REPLACE_FONT', addon.getSetting('vip_font'))
         webshare_vip = ET.fromstring(webshare_vip)
         #root.findall(XPATH_TOPBAR + 'definition/control/control[@type="grouplist"]')[1].append(webshare_vip)
         root.find(XPATH_TOPBAR + 'definition/control').append(webshare_vip)

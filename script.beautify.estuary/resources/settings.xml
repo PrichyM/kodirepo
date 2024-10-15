@@ -61,6 +61,18 @@
 						<heading>30022</heading>
 					</control>
 				</setting>
+				<setting id="vip_font" type="string" label="30023" help="" parent="vip">
+					<level>0</level>
+					<default>font20_title</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="vip">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="edit" format="string">
+						<heading>30023</heading>
+					</control>
+				</setting>
 			</group>
 			<group id="2" label="30016">
 				<setting id="skin_reload" type="boolean" label="30017" help="">
