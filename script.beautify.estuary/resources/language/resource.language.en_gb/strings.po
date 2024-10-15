@@ -1,174 +1,234 @@
 # Kodi Media Center language file
 # Addon Name: Beautify Estuary
-# Addon id: skin.beautify.estuary
+# Addon id: script.beautify.estuary
 # Addon Provider: PrichyM
 msgid ""
 msgstr ""
-"Project-Id-Version: KODI Main\n"
-"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: https://forum.kodi.tv/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kodi Translation Team\n"
-"Language-Team: English (United States) (http://www.transifex.com/projects/p/kodi-main/language/en_US/)\n"
+"Language-Team: Team-Kodi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_US\n"
+"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgctxt "#30000"
-msgid "DefaultActor.png"
-msgstr "DefaultActor.png"
-
-msgctxt "#30001"
-msgid "DefaultCountry.png"
-msgstr "DefaultCountry.png"
-
-msgctxt "#30002"
-msgid "DefaultDirector.png"
-msgstr "DefaultDirector.png"
-
-msgctxt "#30003"
-msgid "DefaultGenre.png"
-msgstr "DefaultGenre.png"
-
-msgctxt "#30004"
-msgid "DefaultInProgressShows.png"
-msgstr "DefaultInProgressShows.png"
-
-msgctxt "#30005"
-msgid "DefaultMovieTitle.png"
-msgstr "DefaultMovieTitle.png"
-
-msgctxt "#30006"
-msgid "DefaultMovies.png"
-msgstr "DefaultMovies.png"
-
-msgctxt "#30007"
-msgid "DefaultRecentlyAddedEpisodes.png"
-msgstr "DefaultRecentlyAddedEpisodes.png"
-
-msgctxt "#30008"
-msgid "DefaultRecentlyAddedMovies.png"
-msgstr "DefaultRecentlyAddedMovies.png"
-
-msgctxt "#30009"
-msgid "DefaultRecentlyAddedMusicVideos.png"
-msgstr "DefaultRecentlyAddedMusicVideos.png"
+msgid "Obecné"
+msgstr ""
 
 msgctxt "#30010"
-msgid "DefaultSets.png"
-msgstr "DefaultSets.png"
+msgid "Top bar"
+msgstr ""
 
 msgctxt "#30011"
-msgid "DefaultStudios.png"
-msgstr "DefaultStudios.png"
+msgid "Zobrazit datum"
+msgstr ""
 
 msgctxt "#30012"
-msgid "DefaultTVShowTitle.png"
-msgstr "DefaultTVShowTitle.png"
+msgid "Zobrazit svátky"
+msgstr ""
 
 msgctxt "#30013"
-msgid "DefaultTVShows.png"
-msgstr "DefaultTVShows.png"
+msgid "Zbývající dny VIP webshare"
+msgstr ""
 
 msgctxt "#30014"
-msgid "DefaultTags.png"
-msgstr "DefaultTags.png"
+msgid "Uživatelské jméno"
+msgstr ""
 
 msgctxt "#30015"
-msgid "DefaultVideo.png"
-msgstr "DefaultVideo.png"
+msgid "Heslo"
+msgstr ""
 
 msgctxt "#30016"
-msgid "DefaultVideoCover.png"
-msgstr "DefaultVideoCover.png"
+msgid "Quit Menu"
+msgstr ""
 
 msgctxt "#30017"
-msgid "DefaultVideoDeleted.png"
-msgstr "DefaultVideoDeleted.png"
+msgid "Reload skin"
+msgstr ""
 
 msgctxt "#30018"
-msgid "DefaultVideoPlaylists.png"
-msgstr "DefaultVideoPlaylists.png"
+msgid "Toggle skin debug"
+msgstr ""
 
 msgctxt "#30019"
-msgid "DefaultYear.png"
-msgstr "DefaultYear.png"
+msgid "Toggle debug"
+msgstr ""
 
 msgctxt "#30020"
-msgid "addons.png"
-msgstr "addons.png"
+msgid "Rating"
+msgstr ""
 
 msgctxt "#30021"
-msgid "android.png"
-msgstr "android.png"
+msgid "Velikost kruhu"
+msgstr ""
 
 msgctxt "#30022"
-msgid "disc.png"
-msgstr "disc.png"
+msgid "Barva kruhu (default: button_focus)"
+msgstr ""
 
 msgctxt "#30023"
-msgid "download.png"
-msgstr "download.png"
+msgid "Font (default: font20_title)"
+msgstr ""
 
 msgctxt "#30024"
-msgid "favourites.png"
-msgstr "favourites.png"
+msgid "Bottom bar"
+msgstr ""
 
 msgctxt "#30025"
-msgid "livetv.png"
-msgstr "livetv.png"
+msgid "Zobrazit čas konce přehrávání vybraného tiulu"
+msgstr ""
 
-msgctxt "#30026"
-msgid "manage.png"
-msgstr "manage.png"
+msgctxt "#30100"
+msgid "Položky menu"
+msgstr ""
 
-msgctxt "#30027"
-msgid "movies.png"
-msgstr "movies.png"
+msgctxt "#30101"
+msgid "1. položka"
+msgstr ""
 
-msgctxt "#30028"
-msgid "music.png"
-msgstr "music.png"
+msgctxt "#30102"
+msgid "2. položka"
+msgstr ""
 
-msgctxt "#30029"
-msgid "musicvideos.png"
-msgstr "musicvideos.png"
+msgctxt "#30103"
+msgid "3. položka"
+msgstr ""
 
-msgctxt "#30030"
-msgid "pictures.png"
-msgstr "pictures.png"
+msgctxt "#30104"
+msgid "4. položka"
+msgstr ""
 
-msgctxt "#30031"
-msgid "programs.png"
-msgstr "programs.png"
+msgctxt "#30105"
+msgid "5. položka"
+msgstr ""
 
-msgctxt "#30032"
-msgid "radio.png"
-msgstr "radio.png"
+msgctxt "#30106"
+msgid "6. položka"
+msgstr ""
 
-msgctxt "#30033"
-msgid "tv.png"
-msgstr "tv.png"
+msgctxt "#30107"
+msgid "7. položka"
+msgstr ""
 
-msgctxt "#30034"
-msgid "videos.png"
-msgstr "videos.png"
+msgctxt "#30108"
+msgid "8. položka"
+msgstr ""
 
-msgctxt "#30035"
-msgid "weather.png"
-msgstr "weather.png"
+msgctxt "#30109"
+msgid "9. položka"
+msgstr ""
 
-msgctxt "#30036"
+msgctxt "#30127"
+msgid "Počet položek menu"
+msgstr ""
+
+msgctxt "#30128"
+msgid "Název"
+msgstr ""
+
+msgctxt "#30129"
+msgid "Slovní ID"
+msgstr ""
+
+msgctxt "#30130"
+msgid "Vyberte ikonu"
+msgstr ""
+
+msgctxt "#30131"
+msgid "Akce při kliknutí na položku"
+msgstr ""
+
+msgctxt "#30200"
+msgid "Widgety"
+msgstr ""
+
+msgctxt "#30201"
+msgid "1. položka menu"
+msgstr ""
+
+msgctxt "#30202"
+msgid "2. položka menu"
+msgstr ""
+
+msgctxt "#30203"
+msgid "3. položka menu"
+msgstr ""
+
+msgctxt "#30204"
+msgid "4. položka menu"
+msgstr ""
+
+msgctxt "#30205"
+msgid "5. položka menu"
+msgstr ""
+
+msgctxt "#30206"
+msgid "6. položka menu"
+msgstr ""
+
+msgctxt "#30207"
+msgid "7. položka menu"
+msgstr ""
+
+msgctxt "#30208"
+msgid "8. položka menu"
+msgstr ""
+
+msgctxt "#30209"
+msgid "9. položka menu"
+msgstr ""
+
+msgctxt "#30210"
+msgid "Název"
+msgstr ""
+
+msgctxt "#30211"
+msgid "XML soubor"
+msgstr ""
+
+msgctxt "#30212"
+msgid "Řazení"
+msgstr ""
+
+msgctxt "#30213"
+msgid "Widgety 1-3"
+msgstr ""
+
+msgctxt "#30214"
+msgid "Widgety 4-6"
+msgstr ""
+
+msgctxt "#30215"
+msgid "Widgety 7-9"
+msgstr ""
+
+msgctxt "#30216"
+msgid "Vytvořit widget"
+msgstr ""
+
+msgctxt "#30217"
+msgid "Zahrnout kategorie (1. řádek)"
+msgstr ""
+
+msgctxt "#30218"
+msgid "Počet 'poster'-ů"
+msgstr ""
+
+msgctxt "#30219"
 msgid "rating"
-msgstr "rating"
+msgstr ""
 
-msgctxt "#30037"
+msgctxt "#30220"
 msgid "dateAdded"
-msgstr "dateAdded"
+msgstr ""
 
-msgctxt "#30038"
+msgctxt "#30221"
 msgid "lastplayed"
-msgstr "lastplayed"
+msgstr ""
 
