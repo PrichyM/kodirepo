@@ -104,7 +104,7 @@
 					<level>0</level>
 					<default>1</default>
 					<constraints>
-						<minimum>1</minimum>
+						<minimum>0</minimum>
 						<maximum>9</maximum>
 					</constraints>
 					<control type="slider" format="integer">
@@ -822,7 +822,7 @@
 				</setting>
 			</group>
 		</category>
-		<category id="widgety 1-3" label="30213" help="">
+		<category id="widget 1" label="30201" help="">
 			<group id="1" label="30201">
 				<setting id="widget_first" type="boolean" label="30216" help="">
 					<level>0</level>
@@ -1297,6 +1297,8 @@
 					</control>
 				</setting>
 			</group>
+		</category>
+		<category id="widget 2" label="30202" help="">
 			<group id="2" label="30202">
 				<setting id="widget_second" type="boolean" label="30216" help="">
 					<level>0</level>
@@ -1771,6 +1773,8 @@
 					</control>
 				</setting>
 			</group>
+		</category>
+		<category id="widget 3" label="30203" help="">
 			<group id="3" label="30203">
 				<setting id="widget_third" type="boolean" label="30216" help="">
 					<level>0</level>
@@ -2246,7 +2250,7 @@
 				</setting>
 			</group>
 		</category>
-		<category id="widgety 4-6" label="30214" help="">
+		<category id="widget 4" label="30204" help="">
 			<group id="1" label="30204">
 				<setting id="widget_fourth" type="boolean" label="30216" help="">
 					<level>0</level>
@@ -2721,6 +2725,8 @@
 					</control>
 				</setting>
 			</group>
+		</category>
+		<category id="widget 5" label="30205" help="">
 			<group id="2" label="30205">
 				<setting id="widget_fifth" type="boolean" label="30216" help="">
 					<level>0</level>
@@ -3195,6 +3201,8 @@
 					</control>
 				</setting>
 			</group>
+		</category>
+		<category id="widget 6" label="30206" help="">
 			<group id="3" label="30206">
 				<setting id="widget_sixth" type="boolean" label="30216" help="">
 					<level>0</level>
@@ -3670,7 +3678,7 @@
 				</setting>
 			</group>
 		</category>
-		<category id="widgety 7-9" label="30215" help="">
+		<category id="widget 7" label="30207" help="">
 			<group id="1" label="30207">
 				<setting id="widget_seventh" type="boolean" label="30216" help="">
 					<level>0</level>
@@ -4145,6 +4153,8 @@
 					</control>
 				</setting>
 			</group>
+		</category>
+		<category id="widget 8" label="30208" help="">
 			<group id="2" label="30208">
 				<setting id="widget_eighth" type="boolean" label="30216" help="">
 					<level>0</level>
@@ -4619,6 +4629,8 @@
 					</control>
 				</setting>
 			</group>
+		</category>
+		<category id="widget 9" label="30209" help="">
 			<group id="3" label="30209">
 				<setting id="widget_nineth" type="boolean" label="30216" help="">
 					<level>0</level>
