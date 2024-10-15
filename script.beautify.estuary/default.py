@@ -25,6 +25,7 @@ menu_options_name = []
 menu_options_id = []
 num_menu_options_icon = []
 menu_options_icon = nvars.icons_from_settings.replace('\n', '').split(',')
+menu_options_action = []
 widgets = {}
 num_id = []
 failsafe = False
@@ -80,6 +81,7 @@ def main():
         name = 'menu_' + pos + '_name'
         id = 'menu_' + pos + '_id'
         icon = 'menu_' + pos + '_icon'
+        action = 'menu_' + pos + '_addon'
         widget = 'widget_' + pos
         if addon.getSetting(name).strip() != '':
             menu_options_name.append(addon.getSetting(name))
@@ -87,6 +89,8 @@ def main():
             menu_options_id.append(addon.getSetting(id))
         if addon.getSetting(icon) != '':
             num_menu_options_icon.append(int(addon.getSetting(icon)))
+        if addon.getSetting(action).strip() != '':
+            menu_options_action.append(addon.getSetting(action))
         if addon.getSetting(widget) == 'true':
             widgets_posters = {}
             for sub_pos in positions:
@@ -103,6 +107,7 @@ def main():
     log('Menu options name: ' + str(menu_options_name), 'D')
     log('Menu options id: ' + str(menu_options_id), 'D')
     log('Menu options icons: ' + str(menu_options_icon), 'D')
+    log('Menu options actions: ' + str(menu_options_action), 'D')
     log('Widgets dic: ' + str(widgets), 'D')
     log('home folder var: ' + str(home), 'D')
     log('skin_version: ' + str(skin_version), 'D')
@@ -237,6 +242,7 @@ def create_menu(root):
         base = base.replace('REPLACE_NUM', num)
         base = base.replace('REPLACE_ID', menu_options_id[pos])
         base = base.replace('REPLACE_ICON', menu_options_icon[num_menu_options_icon[pos]])
+        base = base.replace('REPLACE_ACTION', menu_options_action[pos])
         root.find(XPATH_MENU).insert(pos, ET.fromstring(base))
     #return root
 

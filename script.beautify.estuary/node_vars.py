@@ -155,7 +155,7 @@ menu = """
         <item>
             <label>REPLACE_NAME</label>
             <property name="menu_id">REPLACE_NUM</property>
-            <onclick>RunAddon(plugin.video.stream-cinema-2-release)</onclick>
+            <onclick>RunAddon(REPLACE_ACTION)</onclick>
             <thumb>icons/sidemenu/REPLACE_ICON</thumb>
             <property name="id">REPLACE_ID</property>
         </item>

@@ -22,7 +22,7 @@
 					<level>0</level>
 					<default/>
 					<constraints>
-						<allowempty>false</allowempty>
+						<allowempty>true</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -37,7 +37,7 @@
 					<level>0</level>
 					<default/>
 					<constraints>
-						<allowempty>false</allowempty>
+						<allowempty>true</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
