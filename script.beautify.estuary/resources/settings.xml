@@ -139,9 +139,9 @@
 			<group id="2" label="30101">
 				<setting id="menu_first_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>1</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -150,21 +150,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_first_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">0</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_first_icon" type="integer" label="30130" help="">
@@ -220,9 +205,9 @@
 			<group id="3" label="30102">
 				<setting id="menu_second_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>2</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -231,21 +216,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_second_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">1</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_second_icon" type="integer" label="30130" help="">
@@ -301,9 +271,9 @@
 			<group id="4" label="30103">
 				<setting id="menu_third_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>3</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -312,21 +282,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_third_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">2</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_third_icon" type="integer" label="30130" help="">
@@ -382,9 +337,9 @@
 			<group id="5" label="30104">
 				<setting id="menu_fourth_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>4</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -393,21 +348,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_fourth_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">3</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_fourth_icon" type="integer" label="30130" help="">
@@ -463,9 +403,9 @@
 			<group id="6" label="30105">
 				<setting id="menu_fifth_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>5</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -474,21 +414,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_fifth_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">4</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_fifth_icon" type="integer" label="30130" help="">
@@ -544,9 +469,9 @@
 			<group id="7" label="30106">
 				<setting id="menu_sixth_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>6</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -555,21 +480,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_sixth_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">5</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_sixth_icon" type="integer" label="30130" help="">
@@ -625,9 +535,9 @@
 			<group id="8" label="30107">
 				<setting id="menu_seventh_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>7</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -636,21 +546,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_seventh_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">6</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_seventh_icon" type="integer" label="30130" help="">
@@ -706,9 +601,9 @@
 			<group id="9" label="30108">
 				<setting id="menu_eighth_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>8</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -717,21 +612,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_eighth_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">7</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_eighth_icon" type="integer" label="30130" help="">
@@ -787,9 +667,9 @@
 			<group id="10" label="30109">
 				<setting id="menu_nineth_name" type="string" label="30128" help="">
 					<level>0</level>
-					<default/>
+					<default>9</default>
 					<constraints>
-						<allowempty>true</allowempty>
+						<allowempty>false</allowempty>
 					</constraints>
 					<dependencies>
 						<dependency type="visible">
@@ -798,21 +678,6 @@
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_nineth_id" type="string" label="30129" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">8</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30129</heading>
 					</control>
 				</setting>
 				<setting id="menu_nineth_icon" type="integer" label="30130" help="">

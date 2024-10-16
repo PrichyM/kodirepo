@@ -22,7 +22,7 @@ skin_folder = home.replace(script_id, new_skin_id)
 # icon = os.path.join(home, 'icon.png')
 positions = ['first', 'second', 'third', 'fourth', 'fiveth', 'sixth', 'seventh', 'eighth', 'nineth']
 menu_options_name = []
-menu_options_id = []
+menu_options_id = ['EsBFid1','EsBFid2','EsBFid3','EsBFid4','EsBFid5','EsBFid6','EsBFid7','EsBFid8','EsBFid9']
 num_menu_options_icon = []
 menu_options_icon = nvars.icons_from_settings.replace('\n', '').split(',')
 menu_options_action = []
@@ -77,7 +77,11 @@ def notifyAndOpenSettings(line1='Neúplné hodnoty v nastavení', line2='Změny 
 
 def main():
     # notify('Button YES pressed')
-    for pos in positions:
+    menu_items = addon.getSettings().getInt('menu_nums')
+    if menu_items == 0:
+        backup()
+        return
+    for pos in positions[:menu_items]:
         name = 'menu_' + pos + '_name'
         id = 'menu_' + pos + '_id'
         icon = 'menu_' + pos + '_icon'
@@ -85,12 +89,12 @@ def main():
         widget = 'widget_' + pos
         if addon.getSetting(name).strip() != '':
             menu_options_name.append(addon.getSetting(name))
-        if addon.getSetting(id).strip() != '':
-            menu_options_id.append(addon.getSetting(id))
         if addon.getSetting(icon) != '':
             num_menu_options_icon.append(int(addon.getSetting(icon)))
         if addon.getSetting(action).strip() != '':
             menu_options_action.append(addon.getSetting(action))
+        else:
+            menu_options_action.append('unset')
         if addon.getSetting(widget) == 'true':
             widgets_posters = {}
             for sub_pos in positions:
@@ -102,10 +106,7 @@ def main():
                 elif bool(addon.getSetting(widget_name).strip() == '') ^ bool(addon.getSetting(widget_xml_node).strip() == ''):
                     notifyAndOpenSettings()
             widgets[pos] = widgets_posters
-    if len(menu_options_name) != len(menu_options_id):
-        notifyAndOpenSettings()
     log('Menu options name: ' + str(menu_options_name), 'D')
-    log('Menu options id: ' + str(menu_options_id), 'D')
     log('Menu options icons: ' + str(menu_options_icon), 'D')
     log('Menu options actions: ' + str(menu_options_action), 'D')
     log('Widgets dic: ' + str(widgets), 'D')
@@ -127,7 +128,7 @@ def backup():
         shutil.copy2(home + '/resources/icon.png', skin_folder + '/resources/')
     else:
         dialog = xbmcgui.Dialog()
-        if dialog.yesno(script_name, 'Tato akce vymaže obsah složky skinu!' + '\n' + 'Veškeré změny, které nebyly provedeny přes nastavení tohoto scriptu budou ztraceny!' + '\n' + 'Pokračovat?'):
+        if dialog.yesno(script_name, 'Tato akce vymaže obsah složky skinu Beautify Estuary!' + '\n' + 'Veškeré změny, které nebyly provedeny přes nastavení tohoto scriptu budou ztraceny!' + '\n' + 'Pokračovat?'):
             shutil.rmtree(skin_folder)
             shutil.copytree(old_skin_folder, skin_folder)
             shutil.copy2(home + '/resources/icon.png', skin_folder + '/resources/')
@@ -209,7 +210,6 @@ def process():
         webshare_vip = nvars.vip_days_node.replace('REPLACE_COLOR', addon.getSetting('vip_color'))
         webshare_vip = webshare_vip.replace('REPLACE_FONT', addon.getSetting('vip_font'))
         webshare_vip = ET.fromstring(webshare_vip)
-        #root.findall(XPATH_TOPBAR + 'definition/control/control[@type="grouplist"]')[1].append(webshare_vip)
         root.find(XPATH_TOPBAR + 'definition/control').append(webshare_vip)
 
     # WATCHING FINISH TIME
@@ -244,7 +244,10 @@ def create_menu(root):
         base = base.replace('REPLACE_NUM', num)
         base = base.replace('REPLACE_ID', menu_options_id[pos])
         base = base.replace('REPLACE_ICON', menu_options_icon[num_menu_options_icon[pos]])
-        base = base.replace('REPLACE_ACTION', menu_options_action[pos])
+        if menu_options_action[pos] != 'unset':
+            base = base.replace('REPLACE_ACTION', 'RunAddon(' + menu_options_action[pos] + ')')
+        else:
+            base = base.replace('REPLACE_ACTION', '')
         root.find(XPATH_MENU).insert(pos, ET.fromstring(base))
     #return root
 
