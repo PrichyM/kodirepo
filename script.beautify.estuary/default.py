@@ -19,10 +19,14 @@ home = xbmcvfs.translatePath(addon.getAddonInfo('path'))
 old_skin_folder = xbmcvfs.translatePath(skin_addon.getAddonInfo('path'))
 new_skin_id = 'skin.estuary.bf'
 skin_folder = home.replace(script_id, new_skin_id)
+addon_data_folder = xbmcvfs.translatePath(addon.getAddonInfo('profile'))
+#library_folder = os.path.join(addon_data_folder, 'library')
+library_folder = os.path.join( xbmcvfs.translatePath('special://profile'), 'library', 'video')
 # icon = os.path.join(home, 'icon.png')
 positions = ['first', 'second', 'third', 'fourth', 'fiveth', 'sixth', 'seventh', 'eighth', 'nineth']
 menu_options_name = []
 menu_options_id = ['EsBFid1','EsBFid2','EsBFid3','EsBFid4','EsBFid5','EsBFid6','EsBFid7','EsBFid8','EsBFid9']
+#menu_options_id = []
 num_menu_options_icon = []
 menu_options_icon = nvars.icons_from_settings.replace('\n', '').split(',')
 menu_options_action = []
@@ -83,12 +87,12 @@ def main():
         return
     for pos in positions[:menu_items]:
         name = 'menu_' + pos + '_name'
-        id = 'menu_' + pos + '_id'
         icon = 'menu_' + pos + '_icon'
         action = 'menu_' + pos + '_addon'
         widget = 'widget_' + pos
         if addon.getSetting(name).strip() != '':
             menu_options_name.append(addon.getSetting(name))
+            #menu_options_id.append(xbmcvfs.makeLegalFilename(addon.getSetting(name)))
         if addon.getSetting(icon) != '':
             num_menu_options_icon.append(int(addon.getSetting(icon)))
         if addon.getSetting(action).strip() != '':
@@ -237,6 +241,9 @@ def createID():
 
 def create_menu(root):
     for pos in range(0, len(menu_options_name)):
+        menu_id_folder = os.path.join(library_folder, menu_options_id[pos])
+        if not os.path.exists(menu_id_folder):
+            xbmcvfs.mkdirs(menu_id_folder)
         num = createID()
         num_id.append(num)
         num = '$NUMBER[' + num + ']'
@@ -259,10 +266,12 @@ def create_widgets(root):
         grouplist_id = str(int_id + 1)
         base = nvars.movie_widget_base.replace('REPLACE_NUM', num_id[pos])
         base = base.replace('REPLACE_GROUP_NUM', grouplist_id)
+        #base = base.replace('REPLACE_LIBRARY_PATH',  library_folder)
         base = base.replace('REPLACE_ID',  menu_options_id[pos])
         if addon.getSetting('widget_' + positions[pos] + '_category') == 'true':
             category_id = str(int_id + 10)
             category = nvars.movie_widget_category.replace('REPLACE_CAT_NUM', category_id)
+            #category = category.replace('REPLACE_LIBRARY_PATH',  library_folder)
             category = category.replace('REPLACE_ID', menu_options_id[pos])
             base = ET.fromstring(base)
             category = ET.fromstring(category)
@@ -277,6 +286,7 @@ def create_widgets(root):
             base_widgetinfo.append(widgetinfo)
             base_widgetinfo.find('visible').text += '| Control.HasFocus(' + str(int_id) + ')'
             poster = nvars.movie_widget_poster.replace('REPLACE_POSTER_NUM', str(int_id))
+            #poster = poster.replace('REPLACE_LIBRARY_PATH',  library_folder)
             poster = poster.replace('REPLACE_ID', menu_options_id[pos])
             poster = poster.replace('REPLACE_XML_PATH', widgets[positions[pos]][positions[subpos]]['path'])
             poster = poster.replace('REPLACE_HEADER', widgets[positions[pos]][positions[subpos]]['name'])
