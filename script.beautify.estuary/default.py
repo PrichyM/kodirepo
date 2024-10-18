@@ -231,6 +231,9 @@ def process():
         root.find(XPATH_RATING + '/control[2]/font').text = addon.getSetting('rating_font').strip()
     tree.write(skin_folder + '/xml/Includes.xml')
 
+    # Enable skin.estuary.bf
+    xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Addons.SetAddonEnabled", "params":{"addonid":"skin.estuary.bf", "enabled":True}')
+
 def createID():
     x = random.randrange(57000, 100000, 1000)
     if x not in num_id:
@@ -314,4 +317,6 @@ if (__name__ == '__main__'):
         main()
         time.sleep(2)
         xbmc.executebuiltin('ReloadSkin()')
-        xbmcgui.Dialog().ok(script_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
+        current_skin = xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Settings.GetSkinSettings"}')
+        if current_skin['result']['skin'] != 'skin.estuary.bf':
+            xbmcgui.Dialog().ok(script_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
