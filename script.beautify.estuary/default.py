@@ -20,8 +20,8 @@ old_skin_folder = xbmcvfs.translatePath(skin_addon.getAddonInfo('path'))
 new_skin_id = 'skin.estuary.bf'
 skin_folder = home.replace(script_id, new_skin_id)
 addon_data_folder = xbmcvfs.translatePath(addon.getAddonInfo('profile'))
-#library_folder = os.path.join(addon_data_folder, 'library')
-library_folder = os.path.join( xbmcvfs.translatePath('special://profile'), 'library', 'video')
+library_folder = os.path.join(xbmcvfs.translatePath('special://profile'), 'library', 'video')
+advancedsettings_file = os.path.join(xbmcvfs.translatePath('special://masterprofile'), 'advancedsettings.xml')
 # icon = os.path.join(home, 'icon.png')
 positions = ['first', 'second', 'third', 'fourth', 'fiveth', 'sixth', 'seventh', 'eighth', 'nineth']
 menu_options_name = []
@@ -146,6 +146,11 @@ def backup():
         root.set('id', new_skin_id)
         root.set('name', script_name)
         tree.write(skin_folder + '/addon.xml')
+        if addon.getSetting('advancedsettings') == 'true':
+            if not os.path.exists(advancedsettings_file):
+                root = ET.Element('advancedsettings')
+                ET.ElementTree(root).write(advancedsettings_file)
+            shutil.copy2(advancedsettings_file, os.path.join(xbmcvfs.translatePath(addon_data_folder), 'advancedsettings.xml.bak'))
         process()
     else:
         notify('Změny NEBYLY provedeny!')
@@ -232,7 +237,26 @@ def process():
     tree.write(skin_folder + '/xml/Includes.xml')
 
     # Enable skin.estuary.bf
-    xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Addons.SetAddonEnabled", "params":{"addonid":"skin.estuary.bf", "enabled":True}')
+    xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Addons.SetAddonEnabled", "params":{"addonid":"' + new_skin_id + '", "enabled":True}')
+    
+    if addon.getSetting('advancedsettings') == 'true':
+        tree = ET.parse(advancedsettings_file)
+        root = tree.getroot()
+        video_el = root.find('video')
+        if video_el is None:
+            # video tag missing -> create video and subsdelayrange tags 
+            video_el = ET.SubElement(root, 'video')
+            ET.SubElement(video_el, 'subsdelayrange').text = addon.getSetting('ads_subsdelay')
+        else:
+            subsdelayrange_el = video_el.find('subsdelayrange')
+            if subsdelayrange_el is None:
+                # subsdelayrange tag missing -> create subsdelayrange tag 
+                ET.SubElement(video_el, 'subsdelayrange').text = addon.getSetting('ads_subsdelay')
+            else:
+                # all tags found -> change value 
+                subsdelayrange_el.text = addon.getSetting('ads_subsdelay')
+        ET.indent(root)
+        ET.ElementTree(root).write(advancedsettings_file)
 
 def createID():
     x = random.randrange(57000, 100000, 1000)
@@ -318,5 +342,5 @@ if (__name__ == '__main__'):
         time.sleep(2)
         xbmc.executebuiltin('ReloadSkin()')
         current_skin = xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Settings.GetSkinSettings"}')
-        if current_skin['result']['skin'] != 'skin.estuary.bf':
+        if current_skin['result']['skin'] != new_skin_id:
             xbmcgui.Dialog().ok(script_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')

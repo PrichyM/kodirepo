@@ -17,6 +17,9 @@
 	<string id="30023">Font (default: font20_title)</string>
 	<string id="30024">Bottom bar</string>
 	<string id="30025">Zobrazit čas konce přehrávání vybraného tiulu</string>
+	<string id="30026">Advancedsettings.xml</string>
+	<string id="30027">Upravit advancedsettings.xml</string>
+	<string id="30028">Maximální hodnota zpoždění titulků (sec)</string>
 
 	<string id="30100">Položky menu</string>
 	<string id="30101">1. položka</string>

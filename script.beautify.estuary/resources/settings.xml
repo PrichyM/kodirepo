@@ -132,6 +132,28 @@
 					<control type="toggle"/>
 				</setting>
 			</group>
+			<group id="5" label="30026">
+				<setting id="advancedsettings" type="boolean" label="30027" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="ads_subsdelay" type="string" label="30028" help="" parent="advancedsettings">
+					<level>0</level>
+					<default>180</default>
+					<constraints>
+						<allowempty>false</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="advancedsettings">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="edit" format="string">
+						<heading>30028</heading>
+					</control>
+				</setting>
+			</group>
 		</category>
 		<category id="položky menu" label="30100" help="">
 			<group id="1">

@@ -84,6 +84,18 @@ msgctxt "#30025"
 msgid "Zobrazit čas konce přehrávání vybraného tiulu"
 msgstr ""
 
+msgctxt "#30026"
+msgid "Advancedsettings.xml"
+msgstr ""
+
+msgctxt "#30027"
+msgid "Upravit advancedsettings.xml"
+msgstr ""
+
+msgctxt "#30028"
+msgid "Maximální hodnota zpoždění titulků (sec)"
+msgstr ""
+
 msgctxt "#30100"
 msgid "Položky menu"
 msgstr ""
