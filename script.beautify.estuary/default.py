@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ET
 import random
 import node_vars as nvars
 import time
+import json
 
 addon = xbmcaddon.Addon('script.beautify.estuary')
 skin_addon = xbmcaddon.Addon('skin.estuary')
@@ -339,8 +340,7 @@ if (__name__ == '__main__'):
     dialog = xbmcgui.Dialog()
     if dialog.yesno(script_name, 'Provést změny skinu dle nastavení?'):
         main()
-        time.sleep(2)
         xbmc.executebuiltin('ReloadSkin()')
-        current_skin = xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Settings.GetSkinSettings"}')
+        current_skin = json.loads(xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Settings.GetSkinSettings"}'))
         if current_skin['result']['skin'] != new_skin_id:
             xbmcgui.Dialog().ok(script_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')

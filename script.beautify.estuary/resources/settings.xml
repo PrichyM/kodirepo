@@ -217,7 +217,7 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_first_addon" type="addon" label="30131" help="">
+        		<setting id="menu_first_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
@@ -283,14 +283,14 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_second_addon" type="addon" label="30131" help="">
+        		<setting id="menu_second_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
-          <dependencies>
+          			<dependencies>
 						<dependency type="visible">
 							<condition operator="gt" setting="menu_nums">1</condition>
 						</dependency>
@@ -349,14 +349,14 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_third_addon" type="addon" label="30131" help="">
+        		<setting id="menu_third_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
-          <dependencies>
+          			<dependencies>
 						<dependency type="visible">
 							<condition operator="gt" setting="menu_nums">2</condition>
 						</dependency>
@@ -415,14 +415,14 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_fourth_addon" type="addon" label="30131" help="">
+        		<setting id="menu_fourth_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
-          <dependencies>
+          			<dependencies>
 						<dependency type="visible">
 							<condition operator="gt" setting="menu_nums">3</condition>
 						</dependency>
@@ -481,14 +481,14 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_fifth_addon" type="addon" label="30131" help="">
+        		<setting id="menu_fifth_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
-          <dependencies>
+          			<dependencies>
 						<dependency type="visible">
 							<condition operator="gt" setting="menu_nums">4</condition>
 						</dependency>
@@ -547,14 +547,14 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_sixth_addon" type="addon" label="30131" help="">
+        		<setting id="menu_sixth_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
-          <dependencies>
+          			<dependencies>
 						<dependency type="visible">
 							<condition operator="gt" setting="menu_nums">5</condition>
 						</dependency>
@@ -613,14 +613,14 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_seventh_addon" type="addon" label="30131" help="">
+        		<setting id="menu_seventh_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
-          <dependencies>
+          			<dependencies>
 						<dependency type="visible">
 							<condition operator="gt" setting="menu_nums">6</condition>
 						</dependency>
@@ -679,14 +679,14 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_eighth_addon" type="addon" label="30131" help="">
+        		<setting id="menu_eighth_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
-          <dependencies>
+          			<dependencies>
 						<dependency type="visible">
 							<condition operator="gt" setting="menu_nums">7</condition>
 						</dependency>
@@ -745,14 +745,14 @@
 						<heading>30130</heading>
 					</control>
 				</setting>
-        <setting id="menu_nineth_addon" type="addon" label="30131" help="">
+        		<setting id="menu_nineth_addon" type="addon" label="30131" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<addontype>xbmc.python.pluginsource</addontype>
 						<allowempty>true</allowempty>
 					</constraints>
-          <dependencies>
+          			<dependencies>
 						<dependency type="visible">
 							<condition operator="gt" setting="menu_nums">8</condition>
 						</dependency>
