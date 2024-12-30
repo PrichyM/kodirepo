@@ -157,6 +157,11 @@
 		</category>
 		<category id="položky menu" label="30100" help="">
 			<group id="1">
+				<setting id="top_menu" type="boolean" label="30126" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="menu_nums" type="integer" label="30127" help="">
 					<level>0</level>
 					<default>0</default>

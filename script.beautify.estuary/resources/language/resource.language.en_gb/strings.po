@@ -136,6 +136,10 @@ msgctxt "#30109"
 msgid "9. položka"
 msgstr ""
 
+msgctxt "#30126"
+msgid "Rozšířené záhlaví menu"
+msgstr ""
+
 msgctxt "#30127"
 msgid "Počet položek menu"
 msgstr ""

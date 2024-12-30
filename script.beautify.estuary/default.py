@@ -38,6 +38,9 @@ failsafe = False
 XPATH_WIDGET = "./controls/control/control[@id='2000']"
 XPATH_MENU = "./controls/control[4]/control[2]/control[1]/content"
 XPATH_WIDGETINFO = './controls/control[4]'
+XPATH_TOP_MENU = './controls/control[4]/control[2]'
+XPATH_TOP_MENU_REMOVE = './/*[@id="700"]'
+
 # Includes.xml
 # TIME_IN_TOPBAR = "$INFO[System.Time]"
 TIME_IN_TOPBAR = "[B]$INFO[System.Time(hh)][COLOR red]:[/COLOR]$INFO[System.Time(mm)][/B]"
@@ -187,6 +190,10 @@ def process():
         create_menu(root)
     if widgets:
         create_widgets(root)
+    if addon.getSetting('top_menu') == 'true':
+        top_menu = ET.fromstring(nvars.top_menu)
+        root.find(XPATH_TOP_MENU).remove(root.find(XPATH_TOP_MENU_REMOVE))
+        root.find(XPATH_TOP_MENU).append(top_menu)
     tree.write(skin_folder + '/xml/Home.xml')
 
     """

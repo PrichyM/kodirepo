@@ -266,7 +266,7 @@ widget_info_node_home_append = """
 # Také je to možné řešit volbou v nastavení skinu - tzn. vybrat si mezi původním a novým způsobem zobrazení tohoto menu,
 # ale to už si ti zkušenější pořeší sami.
 # https://www.xbmc-kodi.cz/prispevek-estuary-easy?pid=85185#pid85185
-menu_system_functions = """
+top_menu = """
 <control type="fixedlist" id="700">
     <left>7</left>
     <top>170</top>
@@ -362,13 +362,13 @@ menu_system_functions = """
             <label>Skin</label>
             <label2>Setting</label2>
             <onclick>ActivateWindow(SkinSettings)</onclick>
-            <thumb>special://skin/extras/icons/skin.png</thumb>
+            <thumb>icons/settings/skin.png</thumb>
         </item>
         <item>
             <label>System</label>
             <label2>Info</label2>
             <onclick>ActivateWindow(systeminfo)</onclick>
-            <thumb>special://skin/extras/icons/sysinfo.png</thumb>
+            <thumb>icons/settings/sysinfo.png</thumb>
         </item>
         <item>
             <label>Full</label>
@@ -383,7 +383,7 @@ menu_system_functions = """
 
 """
 #############################
-######### Miscs.xml ##########
+######### Miscs.xml #########
 #############################
 """
 icons_from_settings = """
@@ -404,3 +404,13 @@ tv.png,
 videos.png,
 weather.png
 """
+
+
+"""
+#############################
+######### TODO ##############
+#############################
+"""
+
+# SPLASH SCREEN
+# https://www.xbmc-kodi.cz/prispevek-estuary-easy?pid=128397#pid128397
