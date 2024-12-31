@@ -183,7 +183,6 @@ def process():
     ######### Home.xml ##########
     #############################
     """
-    # TODO: menu_system_functions
     tree = ET.parse(skin_folder + '/xml/Home.xml')
     root = tree.getroot()
     if menu_options_name:

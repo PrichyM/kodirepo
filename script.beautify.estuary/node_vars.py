@@ -193,9 +193,6 @@ movie_widget_poster = """
                             <param name="sortorder" value="descending"/>
                         </include>
                         """
-                        # if you want to sort videos...
-                        #<param name="sortby" value="rating"/>
-                        #<param name="sortorder" value="descending"/>
                         # if you want to limit number of items...
                         #<param name="item_limit" value="$INFO[Container($PARAM[list_id]).NumItems]"/>
 
@@ -261,124 +258,121 @@ widget_info_node_home_append = """
 </include>
 """
 
-# Edituje se soubor home.xml.
-#Pokud chcete používat toto řešení, je samozřejmě třeba původní control blok grouplist id=700 odstranit (odkomentovat).
-# Také je to možné řešit volbou v nastavení skinu - tzn. vybrat si mezi původním a novým způsobem zobrazení tohoto menu,
-# ale to už si ti zkušenější pořeší sami.
+# REMOVE original control id=700 ! 
 # https://www.xbmc-kodi.cz/prispevek-estuary-easy?pid=85185#pid85185
 top_menu = """
-<control type="fixedlist" id="700">
-    <left>7</left>
-    <top>170</top>
-    <width>450</width>
-    <height>110</height>
-    <orientation>horizontal</orientation>
-    <movement>5</movement>
-    <focusposition>0</focusposition>
-    <onup>SetFocus(9000)</onup>
-    <onup>PageDown</onup>
-    <onup>PageDown</onup>
-    <ondown>SetFocus(9000)</ondown>
-    <ondown>PageUp</ondown>
-    <ondown>PageUp</ondown>
-    <onright>700</onright>
-    <onleft>700</onleft>
-    <scrolltime tween="cubic" easing="out">500</scrolltime>
-    <focusedlayout width="92">
-        <width>92</width>
-        <align>center</align>
-        <control type="image">
-            <left>20</left>
-            <width>40</width>
-            <height>40</height>
-            <align>center</align>
-            <texture>$INFO[ListItem.Art(thumb)]</texture>
-            <visible>Control.HasFocus(700)</visible>
-        </control>
-        <control type="image">
-            <left>20</left>
-            <width>40</width>
-            <height>40</height>
-            <align>center</align>
-            <texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
-            <visible>!Control.HasFocus(700)</visible>
-        </control>
-        <control type="label">
-            <top>40</top>
-            <left>-2</left>
-            <width>80</width>
-            <align>center</align>
-            <font>font_flagL</font>
-            <label>$INFO[ListItem.Label]</label>
-            <shadowcolor>text_shadow</shadowcolor>
-            <visible>Control.HasFocus(700)</visible>
-        </control>
-        <control type="label">
-            <top>55</top>
-            <left>-2</left>
-            <width>80</width>
-            <align>center</align>
-            <font>font_flagL</font>
-            <label>$INFO[ListItem.Label2]</label>
-            <shadowcolor>text_shadow</shadowcolor>
-            <visible>Control.HasFocus(700)</visible>
-        </control>
-    </focusedlayout>
-    <itemlayout width="92">
-        <control type="image">
-            <left>20</left>
-            <width>40</width>
-            <height>40</height>
-            <align>center</align>
-            <texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
-        </control>
-    </itemlayout>
-    <content>
-        <item>
-            <label>Napájení</label>
-            <label2></label2>
-            <onclick>ActivateWindow(shutdownmenu)</onclick>
-            <thumb>icons/power.png</thumb>
-        </item>
-        <item>
-            <label>Hledání</label>
-            <label2></label2>
-            <onclick>ActivateWindow(1107)</onclick>
-            <thumb>icons/search.png</thumb>
-        </item>
-        <item>
-            <label>Files</label>
-            <label2>Manager</label2>
-            <onclick>ActivateWindow(filemanager)</onclick>
-            <thumb>icons/filemanager.png</thumb>
-        </item>
-        <item>
-            <label>System</label>
-            <label2>Setting</label2>
-            <onclick>ActivateWindow(settings)</onclick>
-            <thumb>icons/settings.png</thumb>
-        </item>
-        <item>
-            <label>Skin</label>
-            <label2>Setting</label2>
-            <onclick>ActivateWindow(SkinSettings)</onclick>
-            <thumb>icons/settings/skin.png</thumb>
-        </item>
-        <item>
-            <label>System</label>
-            <label2>Info</label2>
-            <onclick>ActivateWindow(systeminfo)</onclick>
-            <thumb>icons/settings/sysinfo.png</thumb>
-        </item>
-        <item>
-            <label>Full</label>
-            <label2>Screen</label2>
-            <onclick>Fullscreen</onclick>
-            <thumb>icons/now-playing/fullscreen.png</thumb>
-            <visible>Player.HasMedia</visible>
-        </item>
-    </content>
-</control>
+                <control type="fixedlist" id="700">
+                    <left>7</left>
+                    <top>150</top>
+                    <width>450</width>
+                    <height>110</height>
+                    <orientation>horizontal</orientation>
+                    <movement>5</movement>
+                    <focusposition>0</focusposition>
+                    <onup>SetFocus(9000)</onup>
+                    <onup>PageDown</onup>
+                    <onup>PageDown</onup>
+                    <ondown>SetFocus(9000)</ondown>
+                    <ondown>PageUp</ondown>
+                    <ondown>PageUp</ondown>
+                    <onright>700</onright>
+                    <onleft>700</onleft>
+                    <scrolltime tween="cubic" easing="out">500</scrolltime>
+                    <focusedlayout width="92">
+                        <width>92</width>
+                        <align>center</align>
+                        <control type="image">
+                            <left>20</left>
+                            <width>40</width>
+                            <height>40</height>
+                            <align>center</align>
+                            <texture>$INFO[ListItem.Art(thumb)]</texture>
+                            <visible>Control.HasFocus(700)</visible>
+                        </control>
+                        <control type="image">
+                            <left>20</left>
+                            <width>40</width>
+                            <height>40</height>
+                            <align>center</align>
+                            <texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+                            <visible>!Control.HasFocus(700)</visible>
+                        </control>
+                        <control type="label">
+                            <top>40</top>
+                            <left>-2</left>
+                            <width>200</width>
+                            <align>left</align>
+                            <font>font_flagL</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <shadowcolor>text_shadow</shadowcolor>
+                            <visible>Control.HasFocus(700)</visible>
+                        </control>
+                        <control type="label">
+                            <top>55</top>
+                            <left>-2</left>
+                            <width>200</width>
+                            <align>left</align>
+                            <font>font_flagL</font>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <shadowcolor>text_shadow</shadowcolor>
+                            <visible>Control.HasFocus(700)</visible>
+                        </control>
+                    </focusedlayout>
+                    <itemlayout width="92">
+                        <control type="image">
+                            <left>20</left>
+                            <width>40</width>
+                            <height>40</height>
+                            <align>center</align>
+                            <texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+                        </control>
+                    </itemlayout>
+                    <content>
+                        <item>
+                            <label>Napájení</label>
+                            <label2></label2>
+                            <onclick>ActivateWindow(shutdownmenu)</onclick>
+                            <thumb>icons/power.png</thumb>
+                        </item>
+                        <item>
+                            <label>Hledání</label>
+                            <label2></label2>
+                            <onclick>ActivateWindow(1107)</onclick>
+                            <thumb>icons/search.png</thumb>
+                        </item>
+                        <item>
+                            <label>Files</label>
+                            <label2>Manager</label2>
+                            <onclick>ActivateWindow(filemanager)</onclick>
+                            <thumb>icons/filemanager.png</thumb>
+                        </item>
+                        <item>
+                            <label>System</label>
+                            <label2>Setting</label2>
+                            <onclick>ActivateWindow(settings)</onclick>
+                            <thumb>icons/settings.png</thumb>
+                        </item>
+                        <!--<item>
+                            <label>Skin</label>
+                            <label2>Setting</label2>
+                            <onclick>ActivateWindow(SkinSettings)</onclick>
+                            <thumb>icons/settings/skin.png</thumb>
+                        </item>-->
+                        <item>
+                            <label>System</label>
+                            <label2>Info</label2>
+                            <onclick>ActivateWindow(systeminfo)</onclick>
+                            <thumb>icons/settings/sysinfo.png</thumb>
+                        </item>
+                        <item>
+                            <label>Full</label>
+                            <label2>Screen</label2>
+                            <onclick>Fullscreen</onclick>
+                            <thumb>icons/now-playing/fullscreen.png</thumb>
+                            <visible>Player.HasMedia</visible>
+                        </item>
+                    </content>
+                </control>
 """
 
 """
@@ -392,6 +386,7 @@ android.png,
 disc.png,
 download.png,
 favourites.png,
+games.png,
 livetv.png,
 manage.png,
 movies.png,

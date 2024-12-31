@@ -248,3 +248,71 @@ msgctxt "#30221"
 msgid "lastplayed"
 msgstr ""
 
+msgctxt "#30320"
+msgid "addons.png"
+msgstr ""
+
+msgctxt "#30321"
+msgid "android.png"
+msgstr ""
+
+msgctxt "#30322"
+msgid "disc.png"
+msgstr ""
+
+msgctxt "#30323"
+msgid "download.png"
+msgstr ""
+
+msgctxt "#30324"
+msgid "favourites.png"
+msgstr ""
+
+msgctxt "#30325"
+msgid "games.png"
+msgstr ""
+
+msgctxt "#30326"
+msgid "livetv.png"
+msgstr ""
+
+msgctxt "#30327"
+msgid "manage.png"
+msgstr ""
+
+msgctxt "#30328"
+msgid "movies.png"
+msgstr ""
+
+msgctxt "#30329"
+msgid "music.png"
+msgstr ""
+
+msgctxt "#30330"
+msgid "musicvideos.png"
+msgstr ""
+
+msgctxt "#30331"
+msgid "pictures.png"
+msgstr ""
+
+msgctxt "#30332"
+msgid "programs.png"
+msgstr ""
+
+msgctxt "#30333"
+msgid "radio.png"
+msgstr ""
+
+msgctxt "#30334"
+msgid "tv.png"
+msgstr ""
+
+msgctxt "#30335"
+msgid "videos.png"
+msgstr ""
+
+msgctxt "#30336"
+msgid "weather.png"
+msgstr ""
+
