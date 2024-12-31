@@ -50,15 +50,20 @@ def get_calendar(cal_url='https://svatky.vanio.cz/api/'):
 
     https://www.xbmc-kodi.cz/prispevek-estuary-easy?page=26
     """
+    win = xbmcgui.Window(10000)
     headers = {'Accept': 'application/json'}
-    properties = {}
     try:
         response = requests.get(cal_url, headers=headers)
         assert(response.status_code == 200)
         data = response.json()
         log('Name day: ' + data['name'])
         log('isPublicHoliday: ' + str(data['isPublicHoliday']))
-        return data
+        win.setProperty('calendar_nameDay', data['name'])
+        if data['isPublicHoliday']:
+            win.setProperty('calendar_isPublicHoliday', str(data['isPublicHoliday']))
+            win.setProperty('calendar_holidayName', data['holidayName'])
+            if data['shopsClosed']:
+                win.setProperty('shops_closed', str(data['shopsClosed']))
     except AssertionError:
         log('Chyba spojení se serverem svatky.vanio.cz - unexpected status code: ' + str(response.status_code), 'E')
     except requests.exceptions.SSLError as e:
@@ -69,7 +74,6 @@ def get_calendar(cal_url='https://svatky.vanio.cz/api/'):
     except Exception as e:
         log('Chyba při zpracování požadavku na svatky.vanio.cz', 'E')
         log(str(e), 'E')
-
 
 # class WebshareAPI převzata od https://github.com/cyrusmg/webshare-api
 class WebshareAPI:
@@ -153,22 +157,18 @@ if __name__ == '__main__':
     monitor = xbmc.Monitor()
 
     while not monitor.abortRequested():
-        win = xbmcgui.Window(10000)
         curr_time_hour = time.localtime()[3]
         curr_time_minutes = time.localtime()[4]
         curr_time_seconds = time.localtime()[5]
         sleep_until_next_day = (((24 - curr_time_hour) * 60) - curr_time_minutes) * 60 + 5
         log('Start at ' + str(curr_time_hour) + ':' + str(curr_time_minutes) + ':' + str(curr_time_seconds))
         log('Next update: ' + str(sleep_until_next_day / 60) + ' minutes', 'I')
+
         if addon.getSetting('calendar_nameDay') == 'true':
-            data = get_calendar()
-            win.setProperty('calendar_nameDay', data['name'])
-            if data['isPublicHoliday']:
-                win.setProperty('calendar_isPublicHoliday', str(data['isPublicHoliday']))
-                win.setProperty('calendar_holidayName', data['holidayName'])
-                if data['shopsClosed']:
-                    win.setProperty('shops_closed', str(data['shopsClosed']))
+            get_calendar()
+            
         if addon.getSetting('vip') == 'true':
+            win = xbmcgui.Window(10000)
             webshare = WebshareAPI()
             ws_days = webshare.show_vip_left()
             win.setProperty('ws.days', str(ws_days))
