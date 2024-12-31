@@ -12,28 +12,36 @@ import time
 import json
 
 addon = xbmcaddon.Addon('script.beautify.estuary')
-skin_addon = xbmcaddon.Addon('skin.estuary')
-script_name = addon.getAddonInfo('name')
-script_id = addon.getAddonInfo('id')
-skin_version = skin_addon.getAddonInfo('version')
-home = xbmcvfs.translatePath(addon.getAddonInfo('path'))
-old_skin_folder = xbmcvfs.translatePath(skin_addon.getAddonInfo('path'))
-new_skin_id = 'skin.estuary.bf'
-skin_folder = home.replace(script_id, new_skin_id)
+addon_name = addon.getAddonInfo('name')
+addon_id = addon.getAddonInfo('id')
+addon_main_folder_path = xbmcvfs.translatePath(addon.getAddonInfo('path'))
 addon_data_folder = xbmcvfs.translatePath(addon.getAddonInfo('profile'))
+
+old_skin_addon = xbmcaddon.Addon('skin.estuary')
+old_skin_version = old_skin_addon.getAddonInfo('version')
+old_skin_folder = xbmcvfs.translatePath(old_skin_addon.getAddonInfo('path'))
+old_skin_data_folder = xbmcvfs.translatePath(old_skin_addon.getAddonInfo('profile'))
+
+new_skin_id = 'skin.estuary.bf'
+new_skin_folder = addon_main_folder_path.replace(addon_id, new_skin_id)
+new_skin_data_folder = addon_data_folder.replace(addon_id, new_skin_id)
+
 library_folder = os.path.join(xbmcvfs.translatePath('special://profile'), 'library', 'video')
 advancedsettings_file = os.path.join(xbmcvfs.translatePath('special://masterprofile'), 'advancedsettings.xml')
-# icon = os.path.join(home, 'icon.png')
+# icon = os.path.join(addon_main_folder_path, 'icon.png')
+
 positions = ['first', 'second', 'third', 'fourth', 'fiveth', 'sixth', 'seventh', 'eighth', 'nineth']
 menu_options_name = []
 menu_options_id = ['EsBFid1','EsBFid2','EsBFid3','EsBFid4','EsBFid5','EsBFid6','EsBFid7','EsBFid8','EsBFid9']
-#menu_options_id = []
 num_menu_options_icon = []
 menu_options_icon = nvars.icons_from_settings.replace('\n', '').split(',')
 menu_options_action = []
+
 widgets = {}
 num_id = []
+
 failsafe = False
+
 # Home.xml
 XPATH_WIDGET = "./controls/control/control[@id='2000']"
 XPATH_MENU = "./controls/control[4]/control[2]/control[1]/content"
@@ -42,7 +50,6 @@ XPATH_TOP_MENU = './controls/control[4]/control[2]'
 XPATH_TOP_MENU_REMOVE = './/*[@id="700"]'
 
 # Includes.xml
-# TIME_IN_TOPBAR = "$INFO[System.Time]"
 TIME_IN_TOPBAR = "[B]$INFO[System.Time(hh)][COLOR red]:[/COLOR]$INFO[System.Time(mm)][/B]"
 TIME_IN_TOPBAR_calname_part = "$INFO[Window(Home).Property(calendar_nameDay),, ]"
 TIME_IN_TOPBAR_date_part = "[CR]$INFO[System.Date(d. MMM)] [COLOR red]$INFO[System.Date(DDD)][/COLOR]"
@@ -51,6 +58,7 @@ XPATH_RATING = "./include[@name='UserRatingContent']"
 XPATH_TIME_IN_TOPBAR = "*/[@name='TopBar']/definition/control[@type='group']/control[6]/control[3]/label"
 XPATH_TIME_IN_TOPBAR_FONT = "*/[@name='TopBar']/definition/control[@type='group']/control[6]/control[3]/font"
 XPATH_WATCHING_FINISH_TIME = "./include[@name='MediaFlags']/definition/control[@type='grouplist']"
+
 # DialogButtonMenu.xml
 XPATH_QUIT_MENU = './controls/control/control/content'
 
@@ -70,8 +78,7 @@ def log(msg, level):
     xbmc.log(msg, level)
 
 def notify(msg, timeout=7000):
-    # xbmc.executebuiltin('Notification(%s, %s, %d, %s)' % (script_name, msg.encode('utf-8'), timeout, addon.getAddonInfo('icon')))
-    xbmc.executebuiltin('Notification(%s, %s, %d, %s)' % (script_name, msg, timeout, addon.getAddonInfo('icon')))
+    xbmc.executebuiltin('Notification(%s, %s, %d, %s)' % (addon_name, msg, timeout, addon.getAddonInfo('icon')))
     log(msg, xbmc.LOGINFO)
 
 
@@ -79,7 +86,7 @@ def notifyAndOpenSettings(line1='Neúplné hodnoty v nastavení', line2='Změny 
     global failsafe
     failsafe = True
     okdialog = xbmcgui.Dialog()
-    okdialog.ok(script_name, line1 + '\n' + line2 + '\n' + line3)
+    okdialog.ok(addon_name, line1 + '\n' + line2 + '\n' + line3)
     addon.openSettings()
 
 
@@ -89,6 +96,7 @@ def main():
     if menu_items == 0:
         backup()
         return
+    
     for pos in positions[:menu_items]:
         name = 'menu_' + pos + '_name'
         icon = 'menu_' + pos + '_icon'
@@ -118,9 +126,9 @@ def main():
     log('Menu options icons: ' + str(menu_options_icon), 'D')
     log('Menu options actions: ' + str(menu_options_action), 'D')
     log('Widgets dic: ' + str(widgets), 'D')
-    log('home folder var: ' + str(home), 'D')
-    log('skin_version: ' + str(skin_version), 'D')
-    log('script_id: ' + str(script_id), 'D')
+    log('addon_main_folder_path: ' + str(addon_main_folder_path), 'D')
+    log('old_skin_version: ' + str(old_skin_version), 'D')
+    log('addon_id: ' + str(addon_id), 'D')
     log('(NUM) Menu options icons: ' + str(num_menu_options_icon), 'D')
 
     if not failsafe:
@@ -130,26 +138,27 @@ def main():
 
 
 def backup():
-    log('Skin folder: ' + str(skin_folder), 'D')
-    if not os.path.exists(skin_folder):
-        shutil.copytree(old_skin_folder, skin_folder)
-        shutil.copy2(home + '/resources/icon.png', skin_folder + '/resources/')
+    log('Skin folder: ' + str(new_skin_folder), 'D')
+    if not os.path.exists(new_skin_folder):
+        shutil.copytree(old_skin_folder, new_skin_folder)
+        shutil.copy2(addon_main_folder_path + '/resources/icon.png', new_skin_folder + '/resources/')
+        shutil.copytree(old_skin_data_folder, new_skin_data_folder)
     else:
         dialog = xbmcgui.Dialog()
-        if dialog.yesno(script_name, 'Tato akce vymaže obsah složky skinu Beautify Estuary!' + '\n' + 'Veškeré změny, které nebyly provedeny přes nastavení tohoto scriptu budou ztraceny!' + '\n' + 'Pokračovat?'):
-            shutil.rmtree(skin_folder)
-            shutil.copytree(old_skin_folder, skin_folder)
-            shutil.copy2(home + '/resources/icon.png', skin_folder + '/resources/')
+        if dialog.yesno(addon_name, 'Tato akce vymaže obsah složky skinu Beautify Estuary!' + '\n' + 'Veškeré změny, které nebyly provedeny přes nastavení tohoto scriptu budou ztraceny!' + '\n' + 'Pokračovat?'):
+            shutil.rmtree(new_skin_folder)
+            shutil.copytree(old_skin_folder, new_skin_folder)
+            shutil.copy2(addon_main_folder_path + '/resources/icon.png', new_skin_folder + '/resources/')
         else:
             global failsafe
             failsafe = True
 
     if not failsafe:
-        tree = ET.parse(skin_folder + '/addon.xml')
+        tree = ET.parse(new_skin_folder + '/addon.xml')
         root = tree.getroot()
         root.set('id', new_skin_id)
-        root.set('name', script_name)
-        tree.write(skin_folder + '/addon.xml')
+        root.set('name', addon_name)
+        tree.write(new_skin_folder + '/addon.xml')
         if addon.getSetting('advancedsettings') == 'true':
             if not os.path.exists(advancedsettings_file):
                 root = ET.Element('advancedsettings')
@@ -166,7 +175,7 @@ def process():
     #### DialogButtonMenu.xml ###
     #############################
     """
-    tree = ET.parse(skin_folder + '/xml/DialogButtonMenu.xml')
+    tree = ET.parse(new_skin_folder + '/xml/DialogButtonMenu.xml')
     root = tree.getroot()
     if addon.getSetting('skin_reload') == 'true':
         reload_skin = ET.fromstring(nvars.reload_skin)
@@ -177,13 +186,13 @@ def process():
     if addon.getSetting('debug_toggle') == 'true':
         debug_toggle = ET.fromstring(nvars.debug_toggle)
         root.find(XPATH_QUIT_MENU).append(debug_toggle)
-    tree.write(skin_folder + '/xml/DialogButtonMenu.xml')
+    tree.write(new_skin_folder + '/xml/DialogButtonMenu.xml')
     """
     #############################
     ######### Home.xml ##########
     #############################
     """
-    tree = ET.parse(skin_folder + '/xml/Home.xml')
+    tree = ET.parse(new_skin_folder + '/xml/Home.xml')
     root = tree.getroot()
     if menu_options_name:
         create_menu(root)
@@ -193,24 +202,24 @@ def process():
         top_menu = ET.fromstring(nvars.top_menu)
         root.find(XPATH_TOP_MENU).remove(root.find(XPATH_TOP_MENU_REMOVE))
         root.find(XPATH_TOP_MENU).append(top_menu)
-    tree.write(skin_folder + '/xml/Home.xml')
+    tree.write(new_skin_folder + '/xml/Home.xml')
 
     """
     #############################
     ##### Includes_Home.xml #####
     #############################
     """
-    tree = ET.parse(skin_folder + '/xml/Includes_Home.xml')
+    tree = ET.parse(new_skin_folder + '/xml/Includes_Home.xml')
     root = tree.getroot()
     root.append(ET.fromstring(nvars.widget_info_node_includes_home))
-    tree.write(skin_folder + '/xml/Includes_Home.xml')
+    tree.write(new_skin_folder + '/xml/Includes_Home.xml')
 
     """
     #############################
     ######## Includes.xml #######
     #############################
     """
-    tree = ET.parse(skin_folder + '/xml/Includes.xml')
+    tree = ET.parse(new_skin_folder + '/xml/Includes.xml')
     root = tree.getroot()
     # NAME DAY AND DATE IN TOPBAR - instead of only time
     if addon.getSetting('calendar_nameDay') == 'true' or addon.getSetting('date') == 'true':
@@ -241,7 +250,7 @@ def process():
         root.find(XPATH_RATING + '/control[1]/texture').set('colordiffuse', addon.getSetting('rating_color'))
     if addon.getSetting('rating_font').strip() != '':
         root.find(XPATH_RATING + '/control[2]/font').text = addon.getSetting('rating_font').strip()
-    tree.write(skin_folder + '/xml/Includes.xml')
+    tree.write(new_skin_folder + '/xml/Includes.xml')
 
     # Enable skin.estuary.bf
     xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Addons.SetAddonEnabled", "params":{"addonid":"' + new_skin_id + '", "enabled":True}')
@@ -344,9 +353,9 @@ def create_widgets(root):
 
 if (__name__ == '__main__'):
     dialog = xbmcgui.Dialog()
-    if dialog.yesno(script_name, 'Provést změny skinu dle nastavení?'):
+    if dialog.yesno(addon_name, 'Provést změny skinu dle nastavení?'):
         main()
         xbmc.executebuiltin('ReloadSkin()')
         current_skin = json.loads(xbmc.executeJSONRPC('{"id":1, "jsonrpc":"2.0", "method":"Settings.GetSkinSettings"}'))
         if current_skin['result']['skin'] != new_skin_id:
-            xbmcgui.Dialog().ok(script_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
+            xbmcgui.Dialog().ok(addon_name, 'Aktivujte nový skin (Doplňky - Vzhled a chování - Vzhled)!')
