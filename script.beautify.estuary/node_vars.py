@@ -184,8 +184,8 @@ movie_widget_category = """
 
 movie_widget_poster = """
                         <include content="WidgetListPoster">
-                            <param name="content_path" value="library://video/REPLACE_ID/REPLACE_XML_PATH"/>
-                            <param name="widget_header" value="REPLACE_HEADER"/>
+                            <param name="content_path" value="$INFO[Skin.String(REPLACE_XML_PATH)]"/>
+                            <param name="widget_header" value="$INFO[Skin.String(REPLACE_HEADER)]"/>
                             <param name="widget_target" value="videos"/>
                             <param name="list_id" value="REPLACE_POSTER_NUM"/>
                             <param name="title" value="$INFO[Container($PARAM[list_id]).ListItem.Title,: ]$INFO[Container($PARAM[list_id]).ListItem.Genre, - [COLOR button_focus],[/COLOR]]"/>

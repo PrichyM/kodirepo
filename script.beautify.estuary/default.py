@@ -8,8 +8,9 @@ import shutil
 import xml.etree.ElementTree as ET
 import random
 import node_vars as nvars
-import time
 import json
+import sys
+
 
 addon = xbmcaddon.Addon('script.beautify.estuary')
 addon_name = addon.getAddonInfo('name')
@@ -91,7 +92,6 @@ def notifyAndOpenSettings(line1='Neúplné hodnoty v nastavení', line2='Změny 
 
 
 def main():
-    # notify('Button YES pressed')
     menu_items = addon.getSettings().getInt('menu_nums')
     if menu_items == 0:
         backup()
@@ -104,7 +104,6 @@ def main():
         widget = 'widget_' + pos
         if addon.getSetting(name).strip() != '':
             menu_options_name.append(addon.getSetting(name))
-            #menu_options_id.append(xbmcvfs.makeLegalFilename(addon.getSetting(name)))
         if addon.getSetting(icon) != '':
             num_menu_options_icon.append(int(addon.getSetting(icon)))
         if addon.getSetting(action).strip() != '':
@@ -113,23 +112,25 @@ def main():
             menu_options_action.append('unset')
         if addon.getSetting(widget) == 'true':
             widgets_posters = {}
-            for sub_pos in positions:
-                widget_name = 'widget_' + pos + '_name_' + sub_pos
-                widget_xml_node = 'widget_' + pos + '_node_name_' + sub_pos
-                widget_xml_node_sort = 'widget_' + pos + '_node_sort_' + sub_pos
-                if addon.getSetting(widget_name).strip() != '' and addon.getSetting(widget_xml_node).strip() != '':
-                    widgets_posters[sub_pos] = dict(name=addon.getSetting(widget_name), path=addon.getSetting(widget_xml_node), sort=addon.getSetting(widget_xml_node_sort))
-                elif bool(addon.getSetting(widget_name).strip() == '') ^ bool(addon.getSetting(widget_xml_node).strip() == ''):
+            for sub_pos in positions[:addon.getSettings().getInt(widget + '_nums')]:
+                poster_base = widget + '_poster_' + sub_pos
+                poster_name = poster_base + '.Label'
+                poster_name = xbmc.getInfoLabel('Skin.String(' + poster_name + ')')
+                poster_path = poster_base + '.List'
+                poster_path = xbmc.getInfoLabel('Skin.String(' + poster_path + ')')
+                poster_xml_node_sort = 'widget_' + pos + '_node_sort_' + sub_pos
+                widgets_posters[sub_pos] = dict(name=poster_name, path=poster_path, sort=addon.getSetting(poster_xml_node_sort))
+                '''
+                if widget_name.strip() != '':
+                    widgets_posters[sub_pos] = dict(name=widget_name, path=widget_path, sort=addon.getSetting(widget_xml_node_sort))
+                else:
                     notifyAndOpenSettings()
+                '''
             widgets[pos] = widgets_posters
     log('Menu options name: ' + str(menu_options_name), 'D')
     log('Menu options icons: ' + str(menu_options_icon), 'D')
     log('Menu options actions: ' + str(menu_options_action), 'D')
     log('Widgets dic: ' + str(widgets), 'D')
-    log('addon_main_folder_path: ' + str(addon_main_folder_path), 'D')
-    log('old_skin_version: ' + str(old_skin_version), 'D')
-    log('addon_id: ' + str(addon_id), 'D')
-    log('(NUM) Menu options icons: ' + str(num_menu_options_icon), 'D')
 
     if not failsafe:
         backup()
@@ -299,7 +300,6 @@ def create_menu(root):
         else:
             base = base.replace('REPLACE_ACTION', '')
         root.find(XPATH_MENU).insert(pos, ET.fromstring(base))
-    #return root
 
 
 def create_widgets(root):
@@ -309,12 +309,10 @@ def create_widgets(root):
         grouplist_id = str(int_id + 1)
         base = nvars.movie_widget_base.replace('REPLACE_NUM', num_id[pos])
         base = base.replace('REPLACE_GROUP_NUM', grouplist_id)
-        #base = base.replace('REPLACE_LIBRARY_PATH',  library_folder)
         base = base.replace('REPLACE_ID',  menu_options_id[pos])
         if addon.getSetting('widget_' + positions[pos] + '_category') == 'true':
             category_id = str(int_id + 10)
             category = nvars.movie_widget_category.replace('REPLACE_CAT_NUM', category_id)
-            #category = category.replace('REPLACE_LIBRARY_PATH',  library_folder)
             category = category.replace('REPLACE_ID', menu_options_id[pos])
             base = ET.fromstring(base)
             category = ET.fromstring(category)
@@ -329,10 +327,9 @@ def create_widgets(root):
             base_widgetinfo.append(widgetinfo)
             base_widgetinfo.find('visible').text += '| Control.HasFocus(' + str(int_id) + ')'
             poster = nvars.movie_widget_poster.replace('REPLACE_POSTER_NUM', str(int_id))
-            #poster = poster.replace('REPLACE_LIBRARY_PATH',  library_folder)
             poster = poster.replace('REPLACE_ID', menu_options_id[pos])
-            poster = poster.replace('REPLACE_XML_PATH', widgets[positions[pos]][positions[subpos]]['path'])
-            poster = poster.replace('REPLACE_HEADER', widgets[positions[pos]][positions[subpos]]['name'])
+            poster = poster.replace('REPLACE_XML_PATH', 'widget_' + positions[pos] + '_poster_' + positions[subpos] + '.List')
+            poster = poster.replace('REPLACE_HEADER', 'widget_' + positions[pos] + '_poster_' + positions[subpos] + '.Label')
             sort = 'widget_' + positions[pos] + '_node_sort_' + positions[subpos]
             if widgets[positions[pos]][positions[subpos]]['sort'] == '0':
                 sort = 'rating'
@@ -344,14 +341,38 @@ def create_widgets(root):
             poster = poster.replace('REPLACE_SORT', sort)
             log('REPLACE_SORT: ' + str(sort), 'D')
             log('FOR: ' + str(widgets[positions[pos]][positions[subpos]]), 'D')
+            log('poster: ' + str(poster), 'D')
             poster = ET.fromstring(poster)
             base.find('*/[@type="grouplist"]').append(poster)
         root.find(XPATH_WIDGET).append(base)
     root.find(XPATH_WIDGETINFO).insert(3, base_widgetinfo)
-    #return root
 
+def create_settings():
+    menu_items = addon.getSettings().getInt('menu_nums')
+    if menu_items == 0:
+        return  
+    tree = ET.parse(os.path.join(addon_main_folder_path, 'resources', 'settings.xml'))
+    root = tree.getroot()
+    
+    for pos in positions[:menu_items]:
+        widget = 'widget_' + pos
+    
+    tree.write(os.path.join(addon_main_folder_path, 'resources', 'settings.xml'))
 
+def _parse_argv(params):
+        try:
+            params = dict(arg.split('=') for arg in params[1].split('&'))
+        except:
+            return
+        log('params: %s' % params)
+        if params.get('action', '') == 'create_settings':
+            create_settings()
+    
 if (__name__ == '__main__'):
+    if len(sys.argv) > 1:
+        _parse_argv(sys.argv)
+        sys.exit()
+
     dialog = xbmcgui.Dialog()
     if dialog.yesno(addon_name, 'Provést změny skinu dle nastavení?'):
         main()
