@@ -29,7 +29,6 @@ new_skin_data_folder = addon_data_folder.replace(addon_id, new_skin_id)
 
 library_folder = os.path.join(xbmcvfs.translatePath('special://profile'), 'library', 'video')
 advancedsettings_file = os.path.join(xbmcvfs.translatePath('special://masterprofile'), 'advancedsettings.xml')
-# icon = os.path.join(addon_main_folder_path, 'icon.png')
 
 positions = ['first', 'second', 'third', 'fourth', 'fiveth', 'sixth', 'seventh', 'eighth', 'nineth']
 menu_options_id = ['EsBFid1','EsBFid2','EsBFid3','EsBFid4','EsBFid5','EsBFid6','EsBFid7','EsBFid8','EsBFid9']
@@ -306,7 +305,7 @@ def create_settings():
     # No custom menu, nothing to create
     if menu_items == 0:
         return
-    tree = ET.parse(os.path.join(addon_main_folder_path, 'resources', 'settings.xml'))
+    tree = ET.parse(os.path.join(addon_main_folder_path, 'resources', 'settings_base.xml'))
     root = tree.getroot()
     visible_condition = 0
     # create skin menu item constructors for each menu category in settings
@@ -315,22 +314,17 @@ def create_settings():
     # create poster constructors for each menu category in settings 
         # - generate button; sorting method
     for pos in positions[:menu_items]:
-        # number of 'group' nodes that are children of node with id="widget_POS_category_node"
-        already_existed_groups = len(root.findall('.//*[@id="widget_' + pos + '_category_node"]/group'))
-        log('already_existed_groups for (%s) : %d' % (pos, already_existed_groups), 'I')
-
         ### create poster constructors
         # get number of required posters for this menu item
         poster_items = addon.getSettings().getInt('widget_%s_nums' % pos)
         # set proper group_id and group_label
-        group_id = 2 if already_existed_groups <= 1 else already_existed_groups + 1
-        group_label = 30111 if already_existed_groups <= 1 else 30111 + already_existed_groups - 1
+        group_id = 2
+        group_label = 30111
         poster_list = []
         # TODO: Remove posters and 
         # process only newly added posters
-        start_pos = 0 if already_existed_groups <= 1 else already_existed_groups-1
-        sub_visible_condition = start_pos
-        for subpos in positions[start_pos:poster_items]:
+        sub_visible_condition = 0
+        for subpos in positions[:poster_items]:
             node_settings_menu_poster = nvars.settings_menu_poster.replace('REPLACE_ID', pos)
             node_settings_menu_poster = node_settings_menu_poster.replace('REPLACE_SUBID', subpos)
             node_settings_menu_poster = node_settings_menu_poster.replace('REPLACE_GROUP_ID', str(group_id))
@@ -346,20 +340,14 @@ def create_settings():
         root.find('.//*[@id="widget_%s_category_node"]' % pos).extend(poster_list)
         
         ### create skin menu item constructors
-        # if already_existed_groups > 0, then menu constructor already exists
-        if already_existed_groups != 0:
-            visible_condition += 1
-            continue
         node_settings_menu = nvars.settings_menu.replace('REPLACE_ID', pos)
         node_settings_menu = node_settings_menu.replace('REPLACE_VISIBLE_CONDITION', str(visible_condition))
         node_settings_menu = ET.fromstring(node_settings_menu)
         visible_condition += 1
         # insert skin menu constructor node on top of setting category
         root.find('.//*[@id="widget_%s_category_node"]' % pos).insert(0, node_settings_menu)
-
-    notifyAndOpenSettings(line1='Menu nastavení bylo vygenerováno!', line2='', line3='Nyní můžete pokračovat v nastavení.', open_settings=False)
-    
     tree.write(os.path.join(addon_main_folder_path, 'resources', 'settings.xml'))
+    notifyAndOpenSettings(line1='Menu nastavení bylo vygenerováno!', line2='', line3='Nyní můžete pokračovat v nastavení.', open_settings=False)
 
 def create_skin_strings():
     for pos in positions:
