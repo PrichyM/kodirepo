@@ -1,6 +1,185 @@
 <?xml version="1.0" ?>
 <settings version="1">
 	<section id="script.beautify.estuary">
+		<category id="main" label="30100" help="">
+			<group id="1">
+				<setting id="create_more_settings" type="string" label="30101" help="">
+					<level>3</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action">
+						<data>RunScript(script.beautify.estuary,action=create_settings)</data>
+						<close>true</close>
+					</control>
+				</setting>
+			</group>
+			<group id="2">
+				<setting id="menu_nums" type="integer" label="30102" help="">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<minimum>0</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="top_menu" type="boolean" label="30103" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+			<group id="3" label="30218">
+				<setting id="widget_first_nums" type="integer" label="30201" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">0</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="widget_second_nums" type="integer" label="30202" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">1</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="widget_third_nums" type="integer" label="30203" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">2</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="widget_fourth_nums" type="integer" label="30204" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">3</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="widget_fiveth_nums" type="integer" label="30205" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">4</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="widget_sixth_nums" type="integer" label="30206" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">5</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="widget_seventh_nums" type="integer" label="30207" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">6</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="widget_eighth_nums" type="integer" label="30208" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">7</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="widget_nineth_nums" type="integer" label="30209" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<minimum>1</minimum>
+						<maximum>9</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">8</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
 		<category id="general" label="30000" help="">
 			<group id="1" label="30010">
 				<setting id="date" type="boolean" label="30011" help="">
@@ -155,1388 +334,23 @@
 				</setting>
 			</group>
 		</category>
-		<category id="položky menu" label="30100" help="">
-			<group id="0">
-				<setting id="create_more_settings" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.beautify.estuary,action=create_settings)</data>
-					</control>
-				</setting>
-			</group>
-			<group id="1">
-				<setting id="top_menu" type="boolean" label="30126" help="">
-					<level>0</level>
-					<default>true</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="menu_nums" type="integer" label="30127" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<minimum>0</minimum>
-						<maximum>9</maximum>
-					</constraints>
-					<control type="slider" format="integer">
-						<popup>false</popup>
-					</control>
-				</setting>
-			</group>
-			<group id="2" label="30101">
-				<setting id="menu_first_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">0</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_first_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">0</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_first_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">0</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
-			<group id="3" label="30102">
-				<setting id="menu_second_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>2</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">1</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_second_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">1</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_second_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-          			<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">1</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
-			<group id="4" label="30103">
-				<setting id="menu_third_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>3</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">2</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_third_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">2</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_third_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-          			<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">2</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
-			<group id="5" label="30104">
-				<setting id="menu_fourth_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>4</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">3</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_fourth_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">3</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_fourth_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-          			<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">3</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
-			<group id="6" label="30105">
-				<setting id="menu_fifth_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>5</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">4</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_fifth_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">4</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_fifth_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-          			<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">4</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
-			<group id="7" label="30106">
-				<setting id="menu_sixth_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>6</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">5</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_sixth_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">5</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_sixth_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-          			<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">5</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
-			<group id="8" label="30107">
-				<setting id="menu_seventh_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>7</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">6</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_seventh_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">6</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_seventh_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-          			<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">6</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
-			<group id="9" label="30108">
-				<setting id="menu_eighth_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>8</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">7</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_eighth_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">7</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_eighth_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-          			<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">7</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
-			<group id="10" label="30109">
-				<setting id="menu_nineth_name" type="string" label="30128" help="">
-					<level>0</level>
-					<default>9</default>
-					<constraints>
-						<allowempty>false</allowempty>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">8</condition>
-						</dependency>
-					</dependencies>
-					<control type="edit" format="string">
-						<heading>30128</heading>
-					</control>
-				</setting>
-				<setting id="menu_nineth_icon" type="integer" label="30130" help="">
-					<level>0</level>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30320">0</option>
-							<option label="30321">1</option>
-							<option label="30322">2</option>
-							<option label="30323">3</option>
-							<option label="30324">4</option>
-							<option label="30325">5</option>
-							<option label="30326">6</option>
-							<option label="30327">7</option>
-							<option label="30328">8</option>
-							<option label="30329">9</option>
-							<option label="30330">10</option>
-							<option label="30331">11</option>
-							<option label="30332">12</option>
-							<option label="30333">13</option>
-							<option label="30334">14</option>
-							<option label="30335">15</option>
-							<option label="30336">16</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">8</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30130</heading>
-					</control>
-				</setting>
-        		<setting id="menu_nineth_addon" type="addon" label="30131" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<addontype>xbmc.python.pluginsource</addontype>
-						<allowempty>true</allowempty>
-					</constraints>
-          			<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="menu_nums">8</condition>
-						</dependency>
-					</dependencies>
-					<control type="button" format="addon">
-						<heading>30131</heading>
-						<show more="true" details="true">installed</show>
-					</control>
-				</setting>
-			</group>
+		<category id="widget_first_category_node" label="30201" help="">
 		</category>
-		<category id="widget 1" label="30201" help="">
-			<group id="1" label="30201">
-				<setting id="widget_first" type="boolean" label="30216" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="widget_first_category" type="boolean" label="30217" help="">
-					<level>0</level>
-					<default>true</default>
-					<dependencies>
-						<dependency type="enable">
-							<condition operator="is" setting="widget_first">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="toggle"/>
-				</setting>
-				<setting id="widget_first_nums" type="integer" label="30218" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<minimum>1</minimum>
-						<maximum>9</maximum>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="is" setting="widget_first">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="slider" format="integer">
-						<popup>false</popup>
-					</control>
-				</setting>
-				<setting id="widget_first_poster_first" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_first_poster_first&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_first" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="is" setting="widget_first">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_first_poster_second" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_first_poster_second&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_second" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_first_nums">1</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_first_poster_third" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_first_poster_third&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_third" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_first_nums">2</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_first_poster_fourth" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_first_poster_fourth&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_fourth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_first_nums">3</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_first_poster_fifth" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_first_poster_fifth&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_fifth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_first_nums">4</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_first_poster_sixth" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_first_poster_sixth&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_sixth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_first_nums">5</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_seventh" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_first_nums">6</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_eight" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_first_nums">7</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_first_node_sort_nineth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_first_nums">8</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-			</group>
+		<category id="widget_second_category_node" label="30202" help="">
 		</category>
-		<category id="widget 2" label="30202" help="">
-			<group id="2" label="30202">
-				<setting id="widget_second" type="boolean" label="30216" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="widget_second_category" type="boolean" label="30217" help="">
-					<level>0</level>
-					<default>true</default>
-					<dependencies>
-						<dependency type="enable">
-							<condition operator="is" setting="widget_second">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="toggle"/>
-				</setting>
-				<setting id="widget_second_nums" type="integer" label="30218" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<minimum>1</minimum>
-						<maximum>9</maximum>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="is" setting="widget_second">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="slider" format="integer">
-						<popup>false</popup>
-					</control>
-				</setting>
-				<setting id="widget_second_poster_first" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_second_poster_first&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_first" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="is" setting="widget_second">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_second_poster_second" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_second_poster_second&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_second" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_second_nums">1</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_second_poster_third" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_second_poster_third&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_third" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_second_nums">2</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_second_poster_fourth" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_second_poster_fourth&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_fourth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_second_nums">3</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_fifth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_second_nums">4</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_sixth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_second_nums">5</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_seventh" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_second_nums">6</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_eight" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_second_nums">7</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_second_node_sort_nineth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_second_nums">8</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-			</group>
+		<category id="widget_third_category_node" label="30203" help="">
 		</category>
-		<category id="widget 3" label="30203" help="">
-			<group id="3" label="30203">
-				<setting id="widget_third" type="boolean" label="30216" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="widget_third_category" type="boolean" label="30217" help="">
-					<level>0</level>
-					<default>true</default>
-					<dependencies>
-						<dependency type="enable">
-							<condition operator="is" setting="widget_third">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="toggle"/>
-				</setting>
-				<setting id="widget_third_nums" type="integer" label="30218" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<minimum>1</minimum>
-						<maximum>9</maximum>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="is" setting="widget_third">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="slider" format="integer">
-						<popup>false</popup>
-					</control>
-				</setting>
-				<setting id="widget_third_poster_first" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_third_poster_first&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_first" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="is" setting="widget_third">true</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_third_poster_second" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_third_poster_second&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_second" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_third_nums">1</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_third_poster_third" type="string" label="30210" help="">
-					<level>0</level>
-					<default/>
-					<constraints>
-						<allowempty>true</allowempty>
-					</constraints>
-					<control type="button" format="action">
-						<data>RunScript(script.favourites,property=widget_third_poster_third&amp;changetitle=true)</data>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_third" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_third_nums">2</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_fourth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_third_nums">3</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_fifth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_third_nums">4</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_sixth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_third_nums">5</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_seventh" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_third_nums">6</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_eight" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_third_nums">7</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-				<setting id="widget_third_node_sort_nineth" type="integer" label="30212" help="">
-					<level>0</level>
-					<default>1</default>
-					<constraints>
-						<options>
-							<option label="30219">0</option>
-							<option label="30220">1</option>
-							<option label="30221">2</option>
-						</options>
-					</constraints>
-					<dependencies>
-						<dependency type="visible">
-							<condition operator="gt" setting="widget_third_nums">8</condition>
-						</dependency>
-					</dependencies>
-					<control type="list" format="string">
-						<heading>30212</heading>
-					</control>
-				</setting>
-			</group>
+		<category id="widget_fourth_category_node" label="30204" help="">
+		</category>
+		<category id="widget_fiveth_category_node" label="30205" help="">
+		</category>
+		<category id="widget_sixth_category_node" label="30206" help="">
+		</category>
+		<category id="widget_seventh_category_node" label="30207" help="">
+		</category>
+		<category id="widget_eighth_category_node" label="30208" help="">
+		</category>
+		<category id="widget_nineth_category_node" label="30209" help="">
 		</category>
 	</section>
 </settings>

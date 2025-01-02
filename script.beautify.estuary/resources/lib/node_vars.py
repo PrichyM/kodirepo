@@ -153,10 +153,10 @@ widget_info_node_includes_home = """
 
 menu = """
         <item>
-            <label>REPLACE_NAME</label>
+            <label>$INFO[Skin.String(menu_REPLACE_POS_name)]</label>
             <property name="menu_id">REPLACE_NUM</property>
-            <onclick>REPLACE_ACTION</onclick>
-            <thumb>icons/sidemenu/REPLACE_ICON</thumb>
+            <onclick>RunAddon($INFO[Skin.String(menu_REPLACE_POS_addon)])</onclick>
+            <thumb>icons/sidemenu/$INFO[Skin.String(menu_REPLACE_POS_icon)]</thumb>
             <property name="id">REPLACE_ID</property>
         </item>
         """
@@ -373,6 +373,151 @@ top_menu = """
                         </item>
                     </content>
                 </control>
+"""
+
+#############################
+####### Settings.xml ########
+#############################
+
+settings_menu = """
+            <group id="1">
+				<setting id="menu_REPLACE_ID_name" type="string" label="30128" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<allowempty>false</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">REPLACE_VISIBLE_CONDITION</condition>
+						</dependency>
+					</dependencies>
+					<control type="edit" format="string">
+						<heading>30128</heading>
+					</control>
+				</setting>
+				<setting id="menu_REPLACE_ID_icon" type="integer" label="30130" help="">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="30320">0</option>
+							<option label="30321">1</option>
+							<option label="30322">2</option>
+							<option label="30323">3</option>
+							<option label="30324">4</option>
+							<option label="30325">5</option>
+							<option label="30326">6</option>
+							<option label="30327">7</option>
+							<option label="30328">8</option>
+							<option label="30329">9</option>
+							<option label="30330">10</option>
+							<option label="30331">11</option>
+							<option label="30332">12</option>
+							<option label="30333">13</option>
+							<option label="30334">14</option>
+							<option label="30335">15</option>
+							<option label="30336">16</option>
+						</options>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">REPLACE_VISIBLE_CONDITION</condition>
+						</dependency>
+					</dependencies>
+					<control type="list" format="string">
+						<heading>30130</heading>
+					</control>
+				</setting>
+        		<setting id="menu_REPLACE_ID_addon" type="addon" label="30131" help="">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<addontype>xbmc.python.pluginsource</addontype>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="gt" setting="menu_nums">REPLACE_VISIBLE_CONDITION</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="addon">
+						<heading>30131</heading>
+						<show more="true" details="true">installed</show>
+					</control>
+				</setting>
+                <setting id="menu_REPLACE_ID_generate_strings" type="string" label="30101" help="">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action">
+						<data>RunScript(script.beautify.estuary,action=create_skin_strings)</data>
+						<close>false</close>
+					</control>
+				</setting>
+                <setting id="widget_REPLACE_ID" type="boolean" label="30216" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="widget_REPLACE_ID_category" type="boolean" label="30217" help="">
+					<level>0</level>
+					<default>false</default>
+					<dependencies>
+						<dependency type="enable">
+							<condition operator="is" setting="widget_REPLACE_ID">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
+			</group>
+"""
+
+settings_menu_poster = """
+            <group id="REPLACE_GROUP_ID" label="REPLACE_GROUP_LABEL">
+				<setting id="widget_REPLACE_ID_poster_REPLACE_SUBID" type="string" label="30210" help="">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action">
+						<data>RunScript(script.favourites,property=widget_REPLACE_ID_poster_REPLACE_SUBID&amp;changetitle=true)</data>
+					</control>
+                    <dependencies>
+					    <dependency type="visible">
+                            <and>
+						        <condition operator="is" setting="widget_REPLACE_ID">true</condition>
+                                <condition operator="gt" setting="widget_REPLACE_ID_nums">REPLACE_VISIBLE_CONDITION</condition>
+                            </and>
+					    </dependency>
+				    </dependencies>
+				</setting>
+				<setting id="widget_REPLACE_ID_node_sort_REPLACE_SUBID" type="integer" label="30212" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<options>
+							<option label="30219">0</option>
+							<option label="30220">1</option>
+							<option label="30221">2</option>
+						</options>
+					</constraints>
+					<control type="list" format="string">
+						<heading>30212</heading>
+					</control>
+                    <dependencies>
+					    <dependency type="visible">
+						    <and>
+						        <condition operator="is" setting="widget_REPLACE_ID">true</condition>
+                                <condition operator="gt" setting="widget_REPLACE_ID_nums">REPLACE_VISIBLE_CONDITION</condition>
+                            </and>
+					    </dependency>
+				    </dependencies>
+				</setting>
+			</group>
 """
 
 """

@@ -97,59 +97,59 @@ msgid "Maximální hodnota zpoždění titulků (sec)"
 msgstr ""
 
 msgctxt "#30100"
-msgid "Položky menu"
+msgid "Hlavní nastavení"
 msgstr ""
 
 msgctxt "#30101"
-msgid "1. položka"
+msgid "GENEROVAT MENU"
 msgstr ""
 
 msgctxt "#30102"
-msgid "2. položka"
+msgid "Počet položek menu"
 msgstr ""
 
 msgctxt "#30103"
-msgid "3. položka"
-msgstr ""
-
-msgctxt "#30104"
-msgid "4. položka"
-msgstr ""
-
-msgctxt "#30105"
-msgid "5. položka"
-msgstr ""
-
-msgctxt "#30106"
-msgid "6. položka"
-msgstr ""
-
-msgctxt "#30107"
-msgid "7. položka"
-msgstr ""
-
-msgctxt "#30108"
-msgid "8. položka"
-msgstr ""
-
-msgctxt "#30109"
-msgid "9. položka"
-msgstr ""
-
-msgctxt "#30126"
 msgid "Rozšířené záhlaví menu"
 msgstr ""
 
-msgctxt "#30127"
-msgid "Počet položek menu"
+msgctxt "#30111"
+msgid "1. položka"
+msgstr ""
+
+msgctxt "#30112"
+msgid "2. položka"
+msgstr ""
+
+msgctxt "#30113"
+msgid "3. položka"
+msgstr ""
+
+msgctxt "#30114"
+msgid "4. položka"
+msgstr ""
+
+msgctxt "#30115"
+msgid "5. položka"
+msgstr ""
+
+msgctxt "#30116"
+msgid "6. položka"
+msgstr ""
+
+msgctxt "#30117"
+msgid "7. položka"
+msgstr ""
+
+msgctxt "#30118"
+msgid "8. položka"
+msgstr ""
+
+msgctxt "#30119"
+msgid "9. položka"
 msgstr ""
 
 msgctxt "#30128"
 msgid "Název"
-msgstr ""
-
-msgctxt "#30129"
-msgid "Slovní ID"
 msgstr ""
 
 msgctxt "#30130"
@@ -201,7 +201,7 @@ msgid "9. položka menu"
 msgstr ""
 
 msgctxt "#30210"
-msgid "Název"
+msgid "Generovat poster"
 msgstr ""
 
 msgctxt "#30211"

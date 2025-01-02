@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addons><addon id="script.beautify.estuary" name="Beautify Estuary" version="0.0.5" provider-name="PrichyM">
+<addons><addon id="script.beautify.estuary" name="Beautify Estuary" version="0.0.6" provider-name="PrichyM">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" version="2.31.0" />
     <import addon="script.module.chardet" version="5.1.0" />
+    <import addon="script.favourites" version="8.1.0" />
   </requires>
   <extension point="xbmc.python.script" library="default.py">
     <provides>executable</provides>
