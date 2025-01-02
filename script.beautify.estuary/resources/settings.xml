@@ -264,24 +264,7 @@
 					</control>
 				</setting>
 			</group>
-			<group id="2" label="30016">
-				<setting id="skin_reload" type="boolean" label="30017" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="debug_toggle_skin" type="boolean" label="30018" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="debug_toggle" type="boolean" label="30019" help="">
-					<level>0</level>
-					<default>true</default>
-					<control type="toggle"/>
-				</setting>
-			</group>
-			<group id="3" label="30020">
+			<group id="2" label="30020">
 				<setting id="rating" type="integer" label="30021" help="">
 					<level>0</level>
 					<default>44</default>
@@ -304,14 +287,14 @@
 					</control>
 				</setting>
 			</group>
-			<group id="4" label="30024">
+			<group id="3" label="30024">
 				<setting id="wft" type="boolean" label="30025" help="">
 					<level>0</level>
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 			</group>
-			<group id="5" label="30026">
+			<group id="4" label="30026">
 				<setting id="advancedsettings" type="boolean" label="30027" help="">
 					<level>0</level>
 					<default>false</default>
@@ -331,6 +314,25 @@
 					<control type="edit" format="string">
 						<heading>30028</heading>
 					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="quitmenu" label="30016" help="">
+			<group id="1" label="30016">
+				<setting id="skin_reload" type="boolean" label="30017" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="debug_toggle_skin" type="boolean" label="30018" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="debug_toggle" type="boolean" label="30019" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
 				</setting>
 			</group>
 		</category>

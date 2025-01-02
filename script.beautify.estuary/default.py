@@ -97,24 +97,24 @@ def main():
     '''
     if not os.path.exists(new_skin_folder):
         shutil.copytree(old_skin_folder, new_skin_folder)
-        shutil.copy2(addon_main_folder_path + '/resources/icon.png', new_skin_folder + '/resources/')
+        shutil.copy2(os.path.join(addon_main_folder_path, 'resources', 'icon.png'), os.path.join(new_skin_folder, 'resources'))
         shutil.copytree(old_skin_data_folder, new_skin_data_folder)
     else:
         dialog = xbmcgui.Dialog()
         if dialog.yesno(addon_name, 'Tato akce vymaže obsah složky skinu Beautify Estuary!' + '\n' + 'Veškeré změny, které nebyly provedeny přes nastavení tohoto scriptu budou ztraceny!' + '\n' + 'Pokračovat?'):
             shutil.rmtree(new_skin_folder)
             shutil.copytree(old_skin_folder, new_skin_folder)
-            shutil.copy2(addon_main_folder_path + '/resources/icon.png', new_skin_folder + '/resources/')
+            shutil.copy2(os.path.join(addon_main_folder_path, 'resources', 'icon.png'), os.path.join(new_skin_folder, 'resources'))
         else:
             notify('Změny NEBYLY provedeny!')
             return
     
     # creating skin.estuary.bf
-    tree = ET.parse(new_skin_folder + '/addon.xml')
+    tree = ET.parse(os.path.join(new_skin_folder, 'addon.xml'))
     root = tree.getroot()
     root.set('id', new_skin_id)
     root.set('name', addon_name)
-    tree.write(new_skin_folder + '/addon.xml')
+    tree.write(os.path.join(new_skin_folder, 'addon.xml'))
     
     # advancedsettings.xml backup
     if addon.getSetting('advancedsettings') == 'true':
@@ -153,7 +153,7 @@ def main():
     #############################
     ######### Home.xml ##########
     #############################
-    tree = ET.parse(new_skin_folder + '/xml/Home.xml')
+    tree = ET.parse(os.path.join(new_skin_folder, 'xml', 'Home.xml'))
     root = tree.getroot()
 
     if addon.getSetting('top_menu') == 'true':
@@ -228,7 +228,7 @@ def main():
             root.find(XPATH_WIDGET).append(widget_base)
         int_pos += 1
     root.find(XPATH_WIDGETINFO).insert(3, widgetinfo_base)
-    tree.write(new_skin_folder + '/xml/Home.xml')
+    tree.write(os.path.join(new_skin_folder, 'xml', 'Home.xml'))
 
     ''' 
     Make changes in other XML files 
@@ -239,7 +239,7 @@ def main():
     #############################
     
     # TODO: rewrite, so menu Labels and Actions are stored as Skin.Strings or Window Property and change settings from hardcoded bools to custom strings
-    tree = ET.parse(new_skin_folder + '/xml/DialogButtonMenu.xml')
+    tree = ET.parse(os.path.join(new_skin_folder, 'xml', 'DialogButtonMenu.xml'))
     root = tree.getroot()
     if addon.getSetting('skin_reload') == 'true':
         reload_skin = ET.fromstring(nvars.reload_skin)
@@ -250,24 +250,24 @@ def main():
     if addon.getSetting('debug_toggle') == 'true':
         debug_toggle = ET.fromstring(nvars.debug_toggle)
         root.find(XPATH_QUIT_MENU).append(debug_toggle)
-    tree.write(new_skin_folder + '/xml/DialogButtonMenu.xml')
+    tree.write(os.path.join(new_skin_folder, 'xml', 'DialogButtonMenu.xml'))
 
     
     #############################
     ##### Includes_Home.xml #####
     #############################
     
-    tree = ET.parse(new_skin_folder + '/xml/Includes_Home.xml')
+    tree = ET.parse(os.path.join(new_skin_folder, 'xml', 'Includes_Home.xml'))
     root = tree.getroot()
     root.append(ET.fromstring(nvars.widget_info_node_includes_home))
-    tree.write(new_skin_folder + '/xml/Includes_Home.xml')
+    tree.write(os.path.join(new_skin_folder + 'xml', 'Includes_Home.xml'))
 
     
     #############################
     ######## Includes.xml #######
     #############################
     
-    tree = ET.parse(new_skin_folder + '/xml/Includes.xml')
+    tree = ET.parse(os.path.join(new_skin_folder, 'xml', 'Includes.xml'))
     root = tree.getroot()
     # NAME DAY AND DATE IN TOPBAR - instead of only time
     if addon.getSetting('calendar_nameDay') == 'true' or addon.getSetting('date') == 'true':
@@ -298,7 +298,7 @@ def main():
         root.find(XPATH_RATING + '/control[1]/texture').set('colordiffuse', addon.getSetting('rating_color'))
     if addon.getSetting('rating_font').strip() != '':
         root.find(XPATH_RATING + '/control[2]/font').text = addon.getSetting('rating_font').strip()
-    tree.write(new_skin_folder + '/xml/Includes.xml')
+    tree.write(os.path.join(new_skin_folder, 'xml', 'Includes.xml'))
 
 
 def create_settings():
@@ -317,11 +317,11 @@ def create_settings():
     for pos in positions[:menu_items]:
         # number of 'group' nodes that are children of node with id="widget_POS_category_node"
         already_existed_groups = len(root.findall('.//*[@id="widget_' + pos + '_category_node"]/group'))
-        log('already_existed_groups for (' + pos + ') : ' + str(already_existed_groups), 'I')
+        log('already_existed_groups for (%s) : %d' % (pos, already_existed_groups), 'I')
 
         ### create poster constructors
         # get number of required posters for this menu item
-        poster_items = addon.getSettings().getInt('widget_' + pos + '_nums')
+        poster_items = addon.getSettings().getInt('widget_%s_nums' % pos)
         # set proper group_id and group_label
         group_id = 2 if already_existed_groups <= 1 else already_existed_groups + 1
         group_label = 30111 if already_existed_groups <= 1 else 30111 + already_existed_groups - 1
@@ -343,7 +343,7 @@ def create_settings():
             group_label += 1
             sub_visible_condition += 1
         # append all poster constructor nodes
-        root.find('.//*[@id="widget_' + pos + '_category_node"]').extend(poster_list)
+        root.find('.//*[@id="widget_%s_category_node"]' % pos).extend(poster_list)
         
         ### create skin menu item constructors
         # if already_existed_groups > 0, then menu constructor already exists
@@ -355,7 +355,7 @@ def create_settings():
         node_settings_menu = ET.fromstring(node_settings_menu)
         visible_condition += 1
         # insert skin menu constructor node on top of setting category
-        root.find('.//*[@id="widget_' + pos + '_category_node"]').insert(0, node_settings_menu)
+        root.find('.//*[@id="widget_%s_category_node"]' % pos).insert(0, node_settings_menu)
 
     notifyAndOpenSettings(line1='Menu nastavení bylo vygenerováno!', line2='', line3='Nyní můžete pokračovat v nastavení.', open_settings=False)
     
