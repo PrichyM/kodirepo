@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ET
 import hashlib
 
 addon = xbmcaddon.Addon('script.beautify.estuary')
+failsafe = False
 
 if addon.getSetting('vip') == 'true':
     from resources.lib.passlib.hash import md5_crypt
@@ -35,9 +36,29 @@ def notify(msg, timeout=7000):
     xbmc.executebuiltin('Notification(%s, %s, %d, %s)' % (script_name, msg, timeout, addon.getAddonInfo('icon')))
     log(msg, 'I')
 
-def get_calendar(cal_url='https://svatky.vanio.cz/api/'):
+def get_calendar(https=True, fallback=False):
+    if fallback:
+        cal_url='svatky.vanio.cz/api/' 
+        cal_isholiday_string = 'isPublicHoliday'
+    else:
+        cal_url='svatkyapi.cz/api/day'
+        cal_isholiday_string = 'isHoliday'
+    cal_url = 'https://%s' % cal_url if https else 'http://%s' % cal_url
+
     """
-    Odpověď serveru obsahuje tyto pole:
+    Odpověď serveru svatkyapi.cz obsahuje tato pole:
+        date	    string                          "2025-01-02"
+        dayNumber	string                          "1"
+        dayInWeek	string                          "pondělí"
+        monthNumber	string                          "10"
+        month	Month { nominative	string          "month": {"nominative": "leden", "genitive": "ledna"}
+                        genitive	string}
+        year	string                              "2022"
+        name	string                              "Igor"
+        isHoliday	boolean                         false
+        holidayName	null|string                     null
+                    
+    Odpověď serveru svatky.vanio.cz obsahuje tato pole:
         date (string): Datum ve formátu yyyy-mm-dd
         month (array): Český název měsíce
         nominative (string): v prvním pádě
@@ -46,8 +67,8 @@ def get_calendar(cal_url='https://svatky.vanio.cz/api/'):
         name (string): Jméno, které slaví svátek
         isPublicHoliday (boolean): Zda je dané datum státním svátkem
         holidayName (string): Pouze, pokud je dané datum státním svátkem, název státního svátku
-        shopsClosed (boolean|string): Pouze, pokud je dané datum státním svátkem. Informace, zda jsou podle zákona zavřené obchody. V případě 24.12. je hodnota string ("po 12. hodině"), u ostatních svátků je hodnota boolean.
-
+        shopsClosed (boolean|string):   Pouze, pokud je dané datum státním svátkem. Informace, zda jsou podle zákona zavřené obchody. 
+                                        V případě 24.12. je hodnota string ("po 12. hodině"), u ostatních svátků je hodnota boolean.
     https://www.xbmc-kodi.cz/prispevek-estuary-easy?page=26
     """
     win = xbmcgui.Window(10000)
@@ -56,24 +77,32 @@ def get_calendar(cal_url='https://svatky.vanio.cz/api/'):
         response = requests.get(cal_url, headers=headers)
         assert(response.status_code == 200)
         data = response.json()
-        log('Name day: ' + data['name'])
-        log('isPublicHoliday: ' + str(data['isPublicHoliday']))
-        win.setProperty('calendar_nameDay', data['name'])
-        if data['isPublicHoliday']:
-            win.setProperty('calendar_isPublicHoliday', str(data['isPublicHoliday']))
-            win.setProperty('calendar_holidayName', data['holidayName'])
-            if data['shopsClosed']:
-                win.setProperty('shops_closed', str(data['shopsClosed']))
+        log('Name day: ' + data.get('name'))
+        log('isPublicHoliday: ' + str(data.get(cal_isholiday_string)))
+        win.setProperty('calendar_nameDay', data.get('name'))
+        if data.get(cal_isholiday_string):
+            win.setProperty('calendar_isPublicHoliday', str(data.get(cal_isholiday_string)))
+            win.setProperty('calendar_holidayName', data.get('holidayName'))
+            if data.get('shopsClosed'):
+                win.setProperty('shops_closed', str(data.get('shopsClosed')))
     except AssertionError:
-        log('Chyba spojení se serverem svatky.vanio.cz - unexpected status code: ' + str(response.status_code), 'E')
+        log('Chyba spojení se serverem %s - unexpected status code: %d' % (cal_url, response.status_code), 'E')
     except requests.exceptions.SSLError as e:
-        log('svatky.vanio.cz SSLError', 'E')
+        log('%s SSLError' % cal_url, 'E')
         log(str(e), 'E')
-        log('Zkouším použít protokol http místo protokolu https...', 'I')
-        get_calendar('http://svatky.vanio.cz/api/')
+        log('Zkouším použít protokol http místo protokolu https...', 'W')
+        get_calendar(https=False)
     except Exception as e:
-        log('Chyba při zpracování požadavku na svatky.vanio.cz', 'E')
+        log('Chyba při zpracování požadavku na %s' % cal_url, 'E')
         log(str(e), 'E')
+        if not failsafe:
+            failsafe = True
+            log('Zkouším fallback api svátků', 'W')
+            get_calendar(http=False, fallback=True)
+        else:
+            log('Fallback api failed', 'E')
+            failsafe = False
+            return
 
 # class WebshareAPI převzata od https://github.com/cyrusmg/webshare-api
 class WebshareAPI:
@@ -161,8 +190,8 @@ if __name__ == '__main__':
         curr_time_minutes = time.localtime()[4]
         curr_time_seconds = time.localtime()[5]
         sleep_until_next_day = (((24 - curr_time_hour) * 60) - curr_time_minutes) * 60 + 5
-        log('Start at ' + str(curr_time_hour) + ':' + str(curr_time_minutes) + ':' + str(curr_time_seconds))
-        log('Next update: ' + str(sleep_until_next_day / 60) + ' minutes', 'I')
+        log('Start at %d:%d:%d' % (curr_time_hour, curr_time_minutes, curr_time_seconds))
+        log('Next update: %d minutes' % (sleep_until_next_day / 60), 'I')
 
         if addon.getSetting('calendar_nameDay') == 'true':
             get_calendar()
@@ -174,10 +203,10 @@ if __name__ == '__main__':
             win.setProperty('ws.days', str(ws_days))
             try:
                 if ws_days <= 30:
-                    notify('Webshare VIP už pouze: ' + str(ws_days) + ' dní!', 30000)
+                    notify('Webshare VIP už pouze: %d dní!' % ws_days, 30000)
             except Exception as e:
-                log('Chyba spojení se serverem (webshare)', 'E')
-                log(e, 'E')
+                log('Chyba spojení se serverem webshare.cz', 'E')
+                log(str(e), 'E')
         
         if monitor.waitForAbort(sleep_until_next_day):
             # Abort was requested while waiting. We should exit
